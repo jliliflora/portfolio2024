@@ -6,6 +6,11 @@ import Planet003 from "./planets/Planet003";
 import Planet004 from "./planets/Planet004";
 import Planet005 from "./planets/Planet005";
 
+const OrbitWrapper = styled.div`
+  position: absolute;
+  top: 18vh;
+`;
+
 const OrbitContainer = styled(motion.div)`
   width: 600px;
   height: 300px;
@@ -73,79 +78,81 @@ const lastOrbitVariants = {
 
 function OrbitAni() {
   return (
-    <OrbitContainer variants={conVariants} initial="start" animate="end">
-      <Svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="81"
-        height="81"
-        viewBox="0 0 81 81"
-        fill="none"
-      >
-        <motion.path
-          animate={{ rotate: 360 }}
-          transition={{ repeat: Infinity, ease: "linear", duration: 10 }}
-          d="M40.932.932v80M60.931 6.29l-40 69.283m54.642-54.641-69.282 40m74.641-20h-80m74.641 20-69.282-40m54.64 54.641-40-69.282"
-        />
-      </Svg>
-      <Orbit
-        variants={orbitVariants}
-        style={{ width: "32px", height: "13px" }}
-      ></Orbit>
-      <Orbit
-        variants={orbitVariants}
-        style={{ width: "50px", height: "18px" }}
-      ></Orbit>
-      <Orbit
-        variants={orbitVariants}
-        style={{ width: "63px", height: "23px" }}
-      ></Orbit>
-      <Orbit
-        variants={orbitVariants}
-        style={{ width: "77px", height: "27px" }}
-      ></Orbit>
-      <Orbit
-        variants={orbitVariants}
-        style={{
-          width: "110px",
-          height: "35px",
-          border: " 0.5px dashed rgb(103, 101, 101)",
-        }}
-      ></Orbit>
-      <Orbit
-        variants={orbitVariants}
-        style={{ width: "146px", height: "46px" }}
-      >
-        <Planet001 />
-      </Orbit>
-      <Orbit
-        variants={orbitVariants}
-        style={{ width: "244px", height: "80px", rotate: -1 }}
-      >
-        <Planet002 />
-      </Orbit>
-      <Orbit
-        variants={orbitVariants}
-        style={{ width: "350px", height: "116px" }}
-      >
-        <Planet003 />
-      </Orbit>
-      <Orbit
-        variants={orbitVariants}
-        style={{ width: "460px", height: "150px" }}
-      >
-        <Planet004 />
-      </Orbit>
-      <Orbit
-        variants={lastOrbitVariants}
-        style={{
-          width: "500px",
-          height: "154px",
-          border: " 0.5px dashed rgb(103, 101, 101)",
-        }}
-      >
-        <Planet005 />
-      </Orbit>
-    </OrbitContainer>
+    <OrbitWrapper>
+      <OrbitContainer variants={conVariants} initial="start" animate="end">
+        <Svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="81"
+          height="81"
+          viewBox="0 0 81 81"
+          fill="none"
+        >
+          <motion.path
+            animate={{ rotate: 360 }}
+            transition={{ repeat: Infinity, ease: "linear", duration: 10 }}
+            d="M40.932.932v80M60.931 6.29l-40 69.283m54.642-54.641-69.282 40m74.641-20h-80m74.641 20-69.282-40m54.64 54.641-40-69.282"
+          />
+        </Svg>
+        <Orbit
+          variants={orbitVariants}
+          style={{ width: "32px", height: "13px" }}
+        ></Orbit>
+        <Orbit
+          variants={orbitVariants}
+          style={{ width: "50px", height: "18px" }}
+        ></Orbit>
+        <Orbit
+          variants={orbitVariants}
+          style={{ width: "63px", height: "23px" }}
+        ></Orbit>
+        <Orbit
+          variants={orbitVariants}
+          style={{ width: "77px", height: "27px" }}
+        ></Orbit>
+        <Orbit
+          variants={orbitVariants}
+          style={{
+            width: "110px",
+            height: "35px",
+            border: " 0.5px dashed rgb(103, 101, 101)",
+          }}
+        ></Orbit>
+        <Orbit
+          variants={orbitVariants}
+          style={{ width: "146px", height: "46px" }}
+        >
+          <Planet001 />
+        </Orbit>
+        <Orbit
+          variants={orbitVariants}
+          style={{ width: "244px", height: "80px", rotate: -1 }}
+        >
+          <Planet002 />
+        </Orbit>
+        <Orbit
+          variants={orbitVariants}
+          style={{ width: "350px", height: "116px" }}
+        >
+          <Planet003 />
+        </Orbit>
+        <Orbit
+          variants={orbitVariants}
+          style={{ width: "460px", height: "150px" }}
+        >
+          <Planet004 />
+        </Orbit>
+        <Orbit
+          variants={lastOrbitVariants}
+          style={{
+            width: "500px",
+            height: "154px",
+            border: " 0.5px dashed rgb(103, 101, 101)",
+          }}
+        >
+          <Planet005 />
+        </Orbit>
+      </OrbitContainer>
+    </OrbitWrapper>
   );
 }
 
