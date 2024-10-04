@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "neue_montreallight";
+  src: url("./fonts/neuemontreal-light-webfont.woff") format("woff2"),
+    url("./fonts/neuemontreal-light-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "neue_montrealmedium";
+  src: url("./fonts/neuemontreal-medium-webfont.woff2") format("woff2"),
+    url("./fonts/neuemontreal-medium-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "neue_montrealregular";
+  src: url("./fonts/neuemontreal-regular-webfont.woff2") format("woff2"),
+    url("./fonts/neuemontreal-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}

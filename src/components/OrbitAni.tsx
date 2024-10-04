@@ -28,8 +28,8 @@ const Orbit = styled(motion.div)`
 `;
 
 const Svg = styled.svg`
-  width: 60px;
-  height: 60px;
+  width: 57px;
+  height: 57px;
   path {
     stroke: rgb(130, 130, 130);
     stroke-width: 0.5;
@@ -89,7 +89,7 @@ function OrbitAni() {
         >
           <motion.path
             animate={{ rotate: 360 }}
-            transition={{ repeat: Infinity, ease: "linear", duration: 10 }}
+            transition={{ repeat: Infinity, ease: "linear", duration: 20 }}
             d="M40.932.932v80M60.931 6.29l-40 69.283m54.642-54.641-69.282 40m74.641-20h-80m74.641 20-69.282-40m54.64 54.641-40-69.282"
           />
         </Svg>

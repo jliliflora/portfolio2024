@@ -57,10 +57,7 @@ table {
   box-sizing: border-box;
 }
 body {
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 200;
-  font-style: normal;
+  font-family: "neue_montrealregular";
   color:black;
   line-height: 1.2;
   //background:linear-gradient(135deg,#e09,#d0e);
