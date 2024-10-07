@@ -8,7 +8,7 @@ import Planet005 from "./planets/Planet005";
 
 const OrbitWrapper = styled.div`
   position: absolute;
-  top: 18vh;
+  top: 17vh;
 `;
 
 const OrbitContainer = styled(motion.div)`
