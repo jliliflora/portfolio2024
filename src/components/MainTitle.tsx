@@ -34,8 +34,8 @@ const characterAnimation = {
     y: 0,
     filter: "blur(0px)",
     transition: {
-      duration: 0.6,
-      ease: [0.2, 0.65, 0.3, 0.6],
+      duration: 0.5,
+      ease: [0.15, 0.6, 0.25, 0.55],
     },
   },
 };
@@ -51,7 +51,7 @@ function MainTitle() {
   const ctrls = useAnimation();
 
   const { ref, inView } = useInView({
-    threshold: 0.6,
+    threshold: 0.5,
     triggerOnce: true,
   });
 
@@ -72,8 +72,8 @@ function MainTitle() {
           animate={ctrls}
           variants={wordAnimation}
           transition={{
-            duration: 0.6,
-            delayChildren: lineIndex * 0.4, // 줄 별로 딜레이를 줘서 순차적으로 나타나게 함
+            duration: 0.5,
+            delayChildren: lineIndex * 0.35, // 줄 별로 딜레이를 줘서 순차적으로 나타나게 함
             staggerChildren: 0.05,
           }}
         >

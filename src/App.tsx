@@ -34,28 +34,6 @@ const Nav = styled(motion.div)`
   border: 1px solid black;
 `;
 
-const wordAnimation = {
-  hidden: {},
-  visible: {},
-};
-
-const characterAnimation = {
-  hidden: {
-    opacity: 0,
-    y: 3,
-    filter: "blur(2px)",
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    filter: "blur(0px)",
-    transition: {
-      duration: 0.6,
-      ease: [0.2, 0.65, 0.3, 0.6],
-    },
-  },
-};
-
 function App() {
   return (
     <Wrapper>
