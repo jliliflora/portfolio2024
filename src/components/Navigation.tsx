@@ -73,9 +73,12 @@ const SubMenu = styled(motion.div)`
   position: absolute;
   top: 30px;
   padding: 15px;
-  background-color: #ccc;
+  background-color: #ffffff;
   border-radius: 6px;
   transform-origin: 50% -30px;
+  box-shadow: rgba(0, 0, 0, 0.157) 0px 0.602187px 3.32481px -1.08333px,
+    rgba(0, 0, 0, 0.145) 0px 2.28853px 5.03477px -2.16667px,
+    rgba(0, 0, 0, 0.086) 0px 10px 22px -3.25px;
 `;
 const SubMenuBackground = styled.div`
   position: absolute;
@@ -84,8 +87,8 @@ const SubMenuBackground = styled.div`
   bottom: 0;
   left: 0;
   transform-origin: 0 0;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  /* box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04); */
 `;
 const SubMenuItem = styled.div`
   margin-bottom: 5px;
@@ -111,10 +114,10 @@ const subMenuAnimate = {
 
 function Navigation() {
   const [isClicked, setIsClicked] = useState(false);
-
   const toggleClickMenu = () => {
     setIsClicked(!isClicked);
   };
+
   return (
     <Nav variants={navVariants} initial="start" animate="end">
       <Sec>
