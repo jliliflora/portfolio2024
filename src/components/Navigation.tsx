@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 import styled from "styled-components";
 
 const Nav = styled(motion.div)`
@@ -11,7 +12,6 @@ const Nav = styled(motion.div)`
   color: rgb(150, 150, 150);
   font-size: 0.9rem;
   z-index: 99999;
-  /* background-color: #eb8e8e; */
   /* border: 1px solid black; */
 `;
 const Sec = styled.div`
@@ -25,6 +25,7 @@ const Sec = styled.div`
 const LeftLi = styled.li`
   position: relative;
   padding-right: 1em;
+  cursor: pointer;
   /* border: 1px solid black; */
 `;
 const RightLi = styled.li`
@@ -63,7 +64,57 @@ const navVariants = {
   },
 };
 
+//dropbox
+const MenuItem = styled(motion.div)`
+  width: auto;
+  perspective: 2000px;
+`;
+const SubMenu = styled(motion.div)`
+  position: absolute;
+  top: 30px;
+  padding: 15px;
+  background-color: #ccc;
+  border-radius: 6px;
+  transform-origin: 50% -30px;
+`;
+const SubMenuBackground = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform-origin: 0 0;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+`;
+const SubMenuItem = styled.div`
+  margin-bottom: 5px;
+`;
+
+const subMenuAnimate = {
+  enter: {
+    opacity: 1,
+    rotateX: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+  exit: {
+    opacity: 0,
+    rotateX: -15,
+    transition: {
+      duration: 0.5,
+      delay: 0.15,
+    },
+  },
+};
+
 function Navigation() {
+  const [isClicked, setIsClicked] = useState(false);
+
+  const toggleClickMenu = () => {
+    setIsClicked(!isClicked);
+  };
   return (
     <Nav variants={navVariants} initial="start" animate="end">
       <Sec>
@@ -153,7 +204,21 @@ function Navigation() {
               </ArrowSvg>
             </a>
           </LeftLi>
-          <LeftLi style={{ paddingRight: 0 }}>Email...</LeftLi>
+          <div>
+            <MenuItem onClick={toggleClickMenu}>
+              <LeftLi style={{ paddingRight: 0 }}>Email...</LeftLi>
+              <SubMenu
+                initial="exit"
+                animate={isClicked ? "enter" : "exit"}
+                variants={subMenuAnimate}
+              >
+                <SubMenuBackground />
+                <div>
+                  <SubMenuItem>Submenu Item 1</SubMenuItem>
+                </div>
+              </SubMenu>
+            </MenuItem>
+          </div>
         </ul>
       </Sec>
     </Nav>

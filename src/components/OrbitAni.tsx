@@ -71,7 +71,7 @@ const lastOrbitVariants = {
     y: 0,
     rotate: -20,
     transition: {
-      duration: 1, // opacity와 y가 동시에 실행되도록 같은 duration을 설정
+      duration: 1.1, // opacity와 y가 동시에 실행되도록 같은 duration을 설정
     },
   },
 };
