@@ -4,6 +4,7 @@ import SectionBg from "./components/SectionBg";
 import OrbitAni from "./components/OrbitAni";
 import MainTitle from "./components/MainTitle";
 import Navigation from "./components/Navigation";
+import SectionScroll from "./components/SectionScroll";
 
 const Wrapper = styled(motion.div)`
   height: 100vh;
@@ -22,6 +23,7 @@ function App() {
       <SectionBg />
       <OrbitAni />
       <MainTitle />
+      <SectionScroll />
     </Wrapper>
   );
 }
