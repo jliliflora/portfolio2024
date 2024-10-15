@@ -8,7 +8,7 @@ import Section3 from "./components/Section3";
 
 const Main = styled.div`
   position: relative;
-  height: 300vh;
+  height: 450vh;
 `;
 
 function Experience() {

@@ -20,7 +20,7 @@ interface SectionProps {
 
 function Section3({ scrollYProgress }: SectionProps) {
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
-  const rotate = useTransform(scrollYProgress, [0, 1], [0, -5]);
+
   return (
     <Sec>
       <motion.p style={{ scale }}>Scroll Perspective</motion.p>
