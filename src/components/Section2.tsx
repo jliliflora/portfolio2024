@@ -1,26 +1,37 @@
 import { motion, MotionValue, useTransform } from "framer-motion";
 import styled from "styled-components";
 
+interface SectionProps {
+  scrollYProgress: MotionValue<number>; // scrollYProgress의 타입을 정의
+}
+
 const Sec = styled.section`
   overflow: hidden;
   position: sticky;
   top: 0px;
   height: 150vh;
-  background-color: rgb(17, 75, 53);
+  /* background-color: rgb(17, 75, 53); */
 `;
-const Content = styled.div`
+const Wrapper = styled.div`
+  position: relative;
   width: 100vw;
   height: 100vh;
-  font-size: 3.5vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #000;
+  border-top: 0.3px solid #cacaca;
+  background-color: #fff;
+  /* background-color: rgb(17, 212, 137); */
   /* padding-bottom: 10vh; */
-  border-top: 1px solid black;
-  box-sizing: border-box; /* padding과 border가 포함된 박스 크기 계산 */
-  background-color: rgb(17, 212, 137);
+`;
+const Cnt = styled(motion.div)`
+  position: absolute;
+  bottom: 0;
+  width: 1200px; /* 부모의 너비를 모두 차지하도록 변경 */
+  height: 100vh;
+  border-top: 0.3px solid #cacaca;
+  border: 2px solid #9e2222;
 `;
 
 const b4Sec = styled(motion.section)`
@@ -36,17 +47,31 @@ const b4Sec = styled(motion.section)`
   color: #fff;
   padding-bottom: 10vh;
 `;
-interface SectionProps {
-  scrollYProgress: MotionValue<number>; // scrollYProgress의 타입을 정의
-}
 
 function Section2({ scrollYProgress }: SectionProps) {
-  const scale = useTransform(scrollYProgress, [0, 1], [0.9, 0.7]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1.1, 0.9]);
   return (
     <Sec>
-      <Content>
-        <motion.p style={{ scale }}>Scroll Perspective</motion.p>
-      </Content>
+      <Wrapper>
+        {/* <motion.p style={{ scale }}>Scroll Perspective</motion.p> */}
+        <Cnt style={{ scale }}>
+          <svg
+            width="40px"
+            height="40px"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 2V22M19.0711 4.92893L4.92893 19.0711M22 12H2M19.0711 19.0711L4.92893 4.92893"
+              stroke="#000000"
+              stroke-width="0.7"
+              stroke-linecap="square"
+              stroke-linejoin="bevel"
+            />
+          </svg>
+        </Cnt>
+      </Wrapper>
     </Sec>
   );
 }
