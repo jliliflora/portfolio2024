@@ -37,7 +37,7 @@ const scrollVariants = {
   },
 };
 
-function SectionScroll() {
+function SectionBtn() {
   return (
     <ScrollBox variants={scrollVariants} initial="start" animate="end">
       <div style={{ position: "relative" }}>
@@ -58,4 +58,4 @@ function SectionScroll() {
   );
 }
 
-export default SectionScroll;
+export default SectionBtn;

@@ -1,4 +1,4 @@
-import scss from "../css/sectionBg.module.scss";
+import scss from "../../css/sectionBg.module.scss";
 
 function SectionBg() {
   return (

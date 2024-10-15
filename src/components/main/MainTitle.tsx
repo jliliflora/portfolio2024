@@ -42,7 +42,7 @@ const characterAnimation = {
 
 function MainTitle() {
   const texts = [
-    "Hey, I'm SeungYeon",
+    "Welcome, I'm SeungYeon.",
     "FrontEnd Developer, passionate about",
     "creating beautiful digital experiences.",
     "I make scrolling worth it!",
