@@ -29,18 +29,21 @@ const Wrapper = styled.div`
 const Cnt = styled(motion.div)`
   position: absolute;
   bottom: 0;
-  width: 1200px; /* 부모의 너비를 모두 차지하도록 변경 */
+  /* max-width: 1200px;
+  width: 73vw; */
   height: 100vh;
   border-top: 0.3px solid #cacaca;
-  border: 2px solid #9e2222;
+  /* border: 2px solid #9e2222; */
 `;
 const CntHeader = styled.div`
-  border: 1px solid rebeccapurple;
   display: flex;
   justify-content: space-between;
+  gap: 44vw;
+  margin: 13vh 0 2.5vh 0;
+  border: 1px solid black;
 `;
 const CntTitleBox = styled.div`
-  border: 1px solid black;
+  /* border: 1px solid black; */
   display: flex;
   gap: 10px;
   transition: color 0.4s ease, stroke 0.4s ease;
@@ -61,6 +64,42 @@ const CntTitle = styled.h1`
 `;
 const CntTitleSvg = styled.svg`
   transition: transform 0.4s ease;
+`;
+const WebSiteBtn = styled.button`
+  position: relative;
+  border: none;
+  padding: 7px 23px 7px 11px;
+  font-size: 14px;
+  margin: 0.2rem;
+  cursor: pointer;
+  border-radius: 20px;
+  /* font-family: "neue_montreallight"; */
+  /* background-color: #202020; */
+  transition: background-color 0.4s ease, color 0.4s ease;
+
+  &:hover {
+    background-color: #202020;
+    color: #fff;
+    transition: background-color 0.4s ease, color 0.4s ease;
+    svg path {
+      fill: #fff;
+      transition: fill 0.4s ease;
+    }
+  }
+`;
+const ArrowSvg = styled.svg`
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  path {
+    fill: #202020;
+    transition: fill 0.4s ease;
+  }
+`;
+
+const CntExplain = styled.div`
+  width: 700px;
+  border: 1px solid black;
 `;
 
 function Section1({ scrollYProgress }: SectionProps) {
@@ -91,8 +130,26 @@ function Section1({ scrollYProgress }: SectionProps) {
                 <CntTitle>Movie Rank WebSite</CntTitle>
               </CntTitleBox>
             </div>
-            <div>button</div>
+            <div>
+              <WebSiteBtn>
+                WebSite
+                <ArrowSvg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z" />
+                </ArrowSvg>
+              </WebSiteBtn>
+            </div>
           </CntHeader>
+          <CntExplain>
+            국회에서 의결된 법률안은 정부에 이송되어 15일 이내에 대통령이
+            공포한다. 누구든지 체포 또는 구속을 당한 때에는 즉시 변호인의 조력을
+            받을 권리를 가진다. 다만, 형사피고인이 스스로 변호인을 구할 수 없을
+            때에는 법률이 정하는 바에 의하여 국가가 변호인을 붙인다.
+          </CntExplain>
         </Cnt>
       </Wrapper>
     </Sec>
