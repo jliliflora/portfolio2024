@@ -39,7 +39,7 @@ const CntHeader = styled.div`
   display: flex;
   justify-content: space-between;
   gap: 44vw;
-  margin: 13vh 0 2.5vh 0;
+  margin: 13vh 0 2vh 0;
   border: 1px solid black;
 `;
 const CntTitleBox = styled.div`
@@ -99,8 +99,15 @@ const ArrowSvg = styled.svg`
 
 const CntExplain = styled.div`
   width: 700px;
+  margin-bottom: 3vh;
+  font-size: 0.8rem;
   border: 1px solid black;
 `;
+const CntTechBox = styled.div`
+  border: 1px solid black;
+`;
+const CntTechUl = styled.ul``;
+const CntTechLi = styled.li``;
 
 function Section1({ scrollYProgress }: SectionProps) {
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
@@ -150,6 +157,12 @@ function Section1({ scrollYProgress }: SectionProps) {
             받을 권리를 가진다. 다만, 형사피고인이 스스로 변호인을 구할 수 없을
             때에는 법률이 정하는 바에 의하여 국가가 변호인을 붙인다.
           </CntExplain>
+          <CntTechBox>
+            <CntTechUl>
+              <CntTechLi>Tech</CntTechLi>
+              <CntTechLi>React JS, Typescript, Framer-motion</CntTechLi>
+            </CntTechUl>
+          </CntTechBox>
         </Cnt>
       </Wrapper>
     </Sec>
