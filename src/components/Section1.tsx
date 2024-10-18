@@ -29,24 +29,27 @@ const Wrapper = styled.div`
 const Cnt = styled(motion.div)`
   position: absolute;
   bottom: 0;
-  /* max-width: 1200px;
-  width: 73vw; */
+  max-width: 1248px;
+  width: 100%;
+  /*width: 73vw; */
   height: 100vh;
   border-top: 0.3px solid #cacaca;
-  /* border: 2px solid #9e2222; */
+  border: 2px solid #9e2222;
 `;
 const CntHeader = styled.div`
   display: flex;
   justify-content: space-between;
-  gap: 44vw;
+  width: 100%;
+  /* gap: 44vw; */
   margin: 13vh 0 2vh 0;
   border: 1px solid black;
 `;
 const CntTitleBox = styled.div`
-  /* border: 1px solid black; */
+  border: 1px solid orange;
   display: flex;
   gap: 10px;
   transition: color 0.4s ease, stroke 0.4s ease;
+  margin-left: 20px;
   &:hover {
     color: #888;
     svg {
@@ -70,7 +73,7 @@ const WebSiteBtn = styled.button`
   border: none;
   padding: 7px 23px 7px 11px;
   font-size: 14px;
-  margin: 0.2rem;
+  margin: 0.2rem 20px 0.2rem 0.2rem;
   cursor: pointer;
   border-radius: 20px;
   /* font-family: "neue_montreallight"; */
@@ -101,10 +104,10 @@ const CntExplain = styled.div`
   width: 700px;
   margin-bottom: 3vh;
   font-size: 0.8rem;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 `;
 const CntTechBox = styled.div`
-  border: 1px solid black;
+  /* border: 1px solid black; */
 `;
 const CntTechUl = styled.ul``;
 const CntTechLi = styled.li``;

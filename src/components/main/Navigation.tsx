@@ -1,26 +1,30 @@
-import { motion } from "framer-motion";
-import { useState } from "react";
+import { motion, useScroll } from "framer-motion";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const Nav = styled(motion.div)`
   position: fixed;
   top: 0;
+  max-width: 1248px;
+  width: 100%;
+  /* width: 75vw; */
   height: 10vh;
   display: flex;
   justify-content: space-between;
-  gap: 40vw;
+  /* gap: 40vw; */
   color: rgb(150, 150, 150);
   font-size: 0.9rem;
   z-index: 99999;
   /* border: 1px solid black; */
 `;
-const Sec = styled.div`
-  margin: 5vh 0 0 0;
+const Sec = styled.div<{ show: boolean }>`
+  margin: 5vh 20px 0 20px;
   display: flex;
   justify-content: space-between;
   gap: 5vw;
   white-space: nowrap;
   /* border: 1px solid black; */
+  display: ${(props) => (props.show ? "flex" : "none")};
 `;
 const LeftLi = styled.li`
   position: relative;
@@ -113,7 +117,6 @@ const SubItem = styled.div`
   font-size: 1rem;
   /* border: 1px solid black; */
 `;
-
 const WriteButton = styled.button`
   background-color: #202020;
   color: #fff;
@@ -132,7 +135,6 @@ const WriteButton = styled.button`
     color: #202020;
   }
 `;
-
 const CopyButton = styled.button`
   background-color: white;
   border: none;
@@ -169,6 +171,30 @@ const subMenuAnimate = {
   },
 };
 
+//menu
+const MenuBtn = styled.button<{ show: boolean }>`
+  position: absolute;
+  bottom: 0;
+  right: 20px;
+  width: 90px;
+  height: 53px;
+  border-radius: 30px;
+  border: 1px solid #202020;
+  background-color: #fff;
+  padding: 16px 22.5px;
+  /* font-family: "neue_montreallight"; */
+  font-size: 17px;
+  cursor: pointer;
+  /* display: ${(props) => (props.show ? "flex" : "none")}; */
+  transform: translateY(${(props) => (props.show ? "0" : "25px")});
+  opacity: ${(props) => (props.show ? 1 : 0)};
+  transition: opacity 0.25s, transform 0.25s;
+  &:hover {
+    color: #ff5c5c;
+    border: 1px solid #ff5c5c;
+  }
+`;
+
 function Navigation() {
   const [isClicked, setIsClicked] = useState(false);
   const toggleClickMenu = () => {
@@ -191,9 +217,24 @@ function Navigation() {
     }
   };
 
+  //menu
+  const { scrollYProgress } = useScroll();
+  const [showButton, setShowButton] = useState(true);
+
+  useEffect(() => {
+    return scrollYProgress.onChange((latest) => {
+      if (latest > 0.15) {
+        // 스크롤이 15% 이상일 때
+        setShowButton(false); // 버튼을 숨김
+      } else {
+        setShowButton(true); // 버튼을 다시 보임
+      }
+    });
+  }, [scrollYProgress]);
+
   return (
     <Nav variants={navVariants} initial="start" animate="end">
-      <Sec>
+      <Sec show={showButton}>
         <ul>
           <li>FrontEnd Developer</li>
           <li>Now in Seoul</li>
@@ -225,7 +266,7 @@ function Navigation() {
           </RightLi>
         </ul>
       </Sec>
-      <Sec>
+      <Sec show={showButton}>
         <ul style={{ textAlign: "right" }}>
           <LeftLi>
             <a
@@ -325,6 +366,7 @@ function Navigation() {
           </LeftLi>
         </ul>
       </Sec>
+      <MenuBtn show={!showButton}>Menu</MenuBtn>
     </Nav>
   );
 }
