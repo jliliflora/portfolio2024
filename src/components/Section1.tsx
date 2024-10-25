@@ -34,7 +34,7 @@ const Cnt = styled(motion.div)`
   /*width: 73vw; */
   height: 100vh;
   border-top: 0.3px solid #cacaca;
-  border: 2px solid #9e2222;
+  /* border: 2px solid #9e2222; */
 `;
 const CntHeader = styled.div`
   display: flex;
