@@ -1,6 +1,7 @@
 import { motion, useScroll } from "framer-motion";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
+import ToggleMenu from "./ToggleMenu";
 
 const Nav = styled(motion.div)`
   position: fixed;
@@ -78,11 +79,11 @@ const navVariants = {
 };
 
 //dropbox
-const MenuItem = styled(motion.div)`
+const ToggleItem = styled(motion.div)`
   width: auto;
   perspective: 2000px;
 `;
-const SubMenu = styled(motion.div)`
+const ToggleSub = styled(motion.div)`
   position: absolute;
   top: 25px;
   left: -210px;
@@ -105,11 +106,11 @@ const SubMenuBackground = styled.div`
   /* box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
     0 10px 10px -5px rgba(0, 0, 0, 0.04); */
 `;
-const SubMenuItem = styled.div`
+const ToggleSubBox = styled.div`
   margin-bottom: 5px;
   text-align: left;
 `;
-const SubItem = styled.div`
+const ToggleSubCnt = styled.div`
   display: flex;
   justify-content: space-between;
   color: #2e2e2e;
@@ -153,7 +154,7 @@ const CopyButton = styled.button`
   }
 `;
 
-const subMenuAnimate = {
+const toggleSubAnimate = {
   enter: {
     opacity: 1,
     rotateX: 0,
@@ -193,11 +194,27 @@ const MenuBtn = styled.button<{ show: boolean }>`
     color: #ff5c5c;
     border: 1px solid #ff5c5c;
   }
+
+  width: auto;
+  perspective: 2000px;
+`;
+const ToggleMenuBox = styled(motion.div)`
+  position: absolute;
+  top: 60px;
+  left: -180px;
+  width: 270px;
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 6px;
+  transform-origin: 50% -30px;
+  box-shadow: rgba(0, 0, 0, 0.157) 0px 0.602187px 3.32481px -1.08333px,
+    rgba(0, 0, 0, 0.145) 0px 2.28853px 5.03477px -2.16667px,
+    rgba(0, 0, 0, 0.086) 0px 10px 22px -3.25px;
 `;
 
 function Navigation() {
   const [isClicked, setIsClicked] = useState(false);
-  const toggleClickMenu = () => {
+  const toggleClickEmail = () => {
     setIsClicked(!isClicked);
   };
 
@@ -231,6 +248,12 @@ function Navigation() {
       }
     });
   }, [scrollYProgress]);
+
+  //menuToggle
+  const [isMenuClicked, setIsMenuClicked] = useState(false);
+  const toggleClickMenu = () => {
+    setIsMenuClicked(!isMenuClicked);
+  };
 
   return (
     <Nav variants={navVariants} initial="start" animate="end">
@@ -286,16 +309,18 @@ function Navigation() {
             </a>
           </LeftLi>
           <div>
-            <MenuItem onClick={toggleClickMenu}>
+            <ToggleItem onClick={toggleClickEmail}>
               <LeftLi style={{ paddingRight: 0 }}>Email...</LeftLi>
-              <SubMenu
+              <ToggleSub
                 initial="exit"
                 animate={isClicked ? "enter" : "exit"}
-                variants={subMenuAnimate}
+                variants={toggleSubAnimate}
               >
                 <div>
-                  <SubMenuItem>
-                    <SubItem style={{ padding: "0.2rem 0rem 1rem 0.5rem" }}>
+                  <ToggleSubBox>
+                    <ToggleSubCnt
+                      style={{ padding: "0.2rem 0rem 1rem 0.5rem" }}
+                    >
                       <span
                         style={{
                           fontSize: "1.3rem",
@@ -307,8 +332,8 @@ function Navigation() {
                         Email
                       </span>
                       <WriteButton>Write</WriteButton>
-                    </SubItem>
-                    <SubItem
+                    </ToggleSubCnt>
+                    <ToggleSubCnt
                       style={{
                         backgroundColor: "#eeeeee",
                         borderRadius: "22px",
@@ -322,11 +347,11 @@ function Navigation() {
                       </CopyButton>
                       {/* {copied && <p>Text copied: {textToCopy}</p>}{" "} */}
                       {/* 복사 성공 시 텍스트 표시 */}
-                    </SubItem>
-                  </SubMenuItem>
+                    </ToggleSubCnt>
+                  </ToggleSubBox>
                 </div>
-              </SubMenu>
-            </MenuItem>
+              </ToggleSub>
+            </ToggleItem>
           </div>
         </ul>
         <ul style={{ textAlign: "right" }}>
@@ -366,7 +391,16 @@ function Navigation() {
           </LeftLi>
         </ul>
       </Sec>
-      <MenuBtn show={!showButton}>Menu</MenuBtn>
+      <MenuBtn show={!showButton} onClick={toggleClickMenu}>
+        Menu
+        <ToggleMenuBox
+          initial="exit"
+          animate={isMenuClicked ? "enter" : "exit"}
+          variants={toggleSubAnimate}
+        >
+          <ToggleMenu />
+        </ToggleMenuBox>
+      </MenuBtn>
     </Nav>
   );
 }
