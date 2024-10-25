@@ -6,7 +6,7 @@ import Section1 from "./components/Section1";
 import Section2 from "./components/Section2";
 import Section3 from "./components/Section3";
 
-const Main = styled.div`
+const ExpMain = styled.div`
   position: relative;
   height: 450vh;
 `;
@@ -29,11 +29,11 @@ function Experience() {
   }, []);
 
   return (
-    <Main ref={container}>
+    <ExpMain ref={container}>
       <Section1 scrollYProgress={scrollYProgress} />
       <Section2 scrollYProgress={scrollYProgress} />
       <Section3 scrollYProgress={scrollYProgress} />
-    </Main>
+    </ExpMain>
   );
 }
 export default Experience;

@@ -1,4 +1,5 @@
 import { motion, MotionValue, useTransform } from "framer-motion";
+import { useRef } from "react";
 import styled from "styled-components";
 
 interface SectionProps {
@@ -148,8 +149,10 @@ const CntPreview = styled.div`
 
 function Section1({ scrollYProgress }: SectionProps) {
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
+  const sectionRef = useRef(null);
+
   return (
-    <Sec>
+    <Sec ref={sectionRef} id="section1">
       <Wrapper>
         <Cnt style={{ scale }}>
           <CntHeader>

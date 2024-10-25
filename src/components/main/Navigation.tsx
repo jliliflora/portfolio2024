@@ -1,4 +1,4 @@
-import { motion, useScroll } from "framer-motion";
+import { AnimatePresence, motion, useScroll } from "framer-motion";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import ToggleMenu from "./ToggleMenu";
@@ -29,6 +29,15 @@ const Sec = styled.div<{ show: boolean }>`
 `;
 const LeftLi = styled.li`
   position: relative;
+  padding-left: 1.1em;
+  cursor: pointer;
+  &:hover {
+    color: #cacaca;
+  }
+  /* border: 1px solid black; */
+`;
+const RightLi = styled.li`
+  position: relative;
   padding-right: 1em;
   cursor: pointer;
   &:hover {
@@ -36,14 +45,6 @@ const LeftLi = styled.li`
   }
   &:hover svg path {
     fill: #cacaca;
-  }
-  /* border: 1px solid black; */
-`;
-const RightLi = styled.li`
-  position: relative;
-  padding-left: 1.1em;
-  &:hover {
-    color: #cacaca;
   }
   /* border: 1px solid black; */
 `;
@@ -154,22 +155,9 @@ const CopyButton = styled.button`
   }
 `;
 
-const toggleSubAnimate = {
-  enter: {
-    opacity: 1,
-    rotateX: 0,
-    transition: {
-      duration: 0.5,
-    },
-  },
-  exit: {
-    opacity: 0,
-    rotateX: -15,
-    transition: {
-      duration: 0.5,
-      delay: 0.15,
-    },
-  },
+const toggleAnimate = {
+  enter: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: 25 },
 };
 
 //menu
@@ -213,6 +201,7 @@ const ToggleMenuBox = styled(motion.div)`
 `;
 
 function Navigation() {
+  //emailToggle
   const [isClicked, setIsClicked] = useState(false);
   const toggleClickEmail = () => {
     setIsClicked(!isClicked);
@@ -255,6 +244,14 @@ function Navigation() {
     setIsMenuClicked(!isMenuClicked);
   };
 
+  //navhandler
+  const handleScroll = (sectionId: string) => {
+    const sectionElement = document.getElementById(sectionId);
+    if (sectionElement) {
+      sectionElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <Nav variants={navVariants} initial="start" animate="end">
       <Sec show={showButton}>
@@ -263,7 +260,7 @@ function Navigation() {
           <li>Now in Seoul</li>
         </ul>
         <ul>
-          <RightLi>
+          <LeftLi onClick={() => handleScroll("section1")}>
             <StarSvg
               xmlns="http://www.w3.org/2000/svg"
               width="81"
@@ -274,8 +271,8 @@ function Navigation() {
               <path d="M40.932.932v80M60.931 6.29l-40 69.283m54.642-54.641-69.282 40m74.641-20h-80m74.641 20-69.282-40m54.64 54.641-40-69.282" />
             </StarSvg>
             Experience
-          </RightLi>
-          <RightLi>
+          </LeftLi>
+          <LeftLi>
             <StarSvg
               xmlns="http://www.w3.org/2000/svg"
               width="81"
@@ -285,13 +282,13 @@ function Navigation() {
             >
               <path d="M40.932.932v80M60.931 6.29l-40 69.283m54.642-54.641-69.282 40m74.641-20h-80m74.641 20-69.282-40m54.64 54.641-40-69.282" />
             </StarSvg>
-            <a href="https://www.naver.com/">About</a>
-          </RightLi>
+            About
+          </LeftLi>
         </ul>
       </Sec>
       <Sec show={showButton}>
         <ul style={{ textAlign: "right" }}>
-          <LeftLi>
+          <RightLi>
             <a
               href="https://github.com/jliliflora"
               style={{ cursor: "pointer" }}
@@ -307,55 +304,63 @@ function Navigation() {
                 <path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z" />
               </ArrowSvg>
             </a>
-          </LeftLi>
+          </RightLi>
           <div>
             <ToggleItem onClick={toggleClickEmail}>
-              <LeftLi style={{ paddingRight: 0 }}>Email...</LeftLi>
-              <ToggleSub
-                initial="exit"
-                animate={isClicked ? "enter" : "exit"}
-                variants={toggleSubAnimate}
-              >
-                <div>
-                  <ToggleSubBox>
-                    <ToggleSubCnt
-                      style={{ padding: "0.2rem 0rem 1rem 0.5rem" }}
-                    >
-                      <span
-                        style={{
-                          fontSize: "1.3rem",
-                          fontFamily: "neue_montrealmedium",
-                          padding: "0",
-                          marginTop: "7px",
-                        }}
-                      >
-                        Email
-                      </span>
-                      <WriteButton>Write</WriteButton>
-                    </ToggleSubCnt>
-                    <ToggleSubCnt
-                      style={{
-                        backgroundColor: "#eeeeee",
-                        borderRadius: "22px",
-                      }}
-                    >
-                      <span style={{ padding: "0", margin: "8px 0 0 12px" }}>
-                        syon704@gmail.com
-                      </span>
-                      <CopyButton onClick={handleCopy}>
-                        {copied ? "Copied!" : "Copy"}
-                      </CopyButton>
-                      {/* {copied && <p>Text copied: {textToCopy}</p>}{" "} */}
-                      {/* 복사 성공 시 텍스트 표시 */}
-                    </ToggleSubCnt>
-                  </ToggleSubBox>
-                </div>
-              </ToggleSub>
+              <RightLi style={{ paddingRight: 0 }}>Email...</RightLi>
+              <AnimatePresence>
+                {isClicked && (
+                  <ToggleSub
+                    initial="exit"
+                    animate="enter"
+                    exit="exit"
+                    variants={toggleAnimate}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <div>
+                      <ToggleSubBox>
+                        <ToggleSubCnt
+                          style={{ padding: "0.2rem 0rem 1rem 0.5rem" }}
+                        >
+                          <span
+                            style={{
+                              fontSize: "1.3rem",
+                              fontFamily: "neue_montrealmedium",
+                              padding: "0",
+                              marginTop: "7px",
+                            }}
+                          >
+                            Email
+                          </span>
+                          <WriteButton>Write</WriteButton>
+                        </ToggleSubCnt>
+                        <ToggleSubCnt
+                          style={{
+                            backgroundColor: "#eeeeee",
+                            borderRadius: "22px",
+                          }}
+                        >
+                          <span
+                            style={{ padding: "0", margin: "8px 0 0 12px" }}
+                          >
+                            syon704@gmail.com
+                          </span>
+                          <CopyButton onClick={handleCopy}>
+                            {copied ? "Copied!" : "Copy"}
+                          </CopyButton>
+                          {/* {copied && <p>Text copied: {textToCopy}</p>}{" "} */}
+                          {/* 복사 성공 시 텍스트 표시 */}
+                        </ToggleSubCnt>
+                      </ToggleSubBox>
+                    </div>
+                  </ToggleSub>
+                )}
+              </AnimatePresence>
             </ToggleItem>
           </div>
         </ul>
         <ul style={{ textAlign: "right" }}>
-          <LeftLi>
+          <RightLi>
             <a
               href="https://www.instagram.com/j.liliflora/"
               style={{ cursor: "pointer" }}
@@ -371,8 +376,8 @@ function Navigation() {
                 <path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z" />
               </ArrowSvg>
             </a>
-          </LeftLi>
-          <LeftLi>
+          </RightLi>
+          <RightLi>
             <a
               href="https://jliliflora.github.io/portfolio/"
               style={{ cursor: "pointer" }}
@@ -388,18 +393,24 @@ function Navigation() {
                 <path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z" />
               </ArrowSvg>
             </a>
-          </LeftLi>
+          </RightLi>
         </ul>
       </Sec>
       <MenuBtn show={!showButton} onClick={toggleClickMenu}>
         Menu
-        <ToggleMenuBox
-          initial="exit"
-          animate={isMenuClicked ? "enter" : "exit"}
-          variants={toggleSubAnimate}
-        >
-          <ToggleMenu />
-        </ToggleMenuBox>
+        <AnimatePresence>
+          {isMenuClicked && (
+            <ToggleMenuBox
+              initial="exit"
+              animate="enter"
+              exit="exit"
+              variants={toggleAnimate}
+              transition={{ duration: 0.2 }}
+            >
+              <ToggleMenu />
+            </ToggleMenuBox>
+          )}
+        </AnimatePresence>
       </MenuBtn>
     </Nav>
   );
