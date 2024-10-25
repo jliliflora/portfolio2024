@@ -41,11 +41,11 @@ const CntHeader = styled.div`
   justify-content: space-between;
   width: 100%;
   /* gap: 44vw; */
-  margin: 13vh 0 2vh 0;
-  border: 1px solid black;
+  margin: 12vh 0 23px 0;
+  /* border: 1px solid black; */
 `;
 const CntTitleBox = styled.div`
-  border: 1px solid orange;
+  /* border: 1px solid orange; */
   display: flex;
   gap: 10px;
   transition: color 0.4s ease, stroke 0.4s ease;
@@ -102,15 +102,49 @@ const ArrowSvg = styled.svg`
 
 const CntExplain = styled.div`
   width: 700px;
-  margin-bottom: 3vh;
-  font-size: 0.8rem;
+  margin-left: 20px;
+  margin-bottom: 40px;
+  font-size: 0.9rem;
   /* border: 1px solid black; */
 `;
 const CntTechBox = styled.div`
-  /* border: 1px solid black; */
+  display: flex;
+  gap: 4vw;
+  margin-left: 20px;
+  /* border: 2px solid red; */
 `;
-const CntTechUl = styled.ul``;
-const CntTechLi = styled.li``;
+const CntTechUl = styled.ul`
+  /* border: 1px solid orange; */
+`;
+const CntTechLi = styled.li`
+  /* border: 1px solid blue; */
+  font-size: 0.95rem;
+  position: relative;
+
+  &:first-child {
+    color: #888;
+    margin-bottom: 7px;
+  }
+`;
+const CntTechLiHover = styled.li`
+  /* border: 1px solid blue; */
+  font-size: 0.95rem;
+  position: relative;
+  cursor: pointer;
+
+  &:hover {
+    color: #888;
+    svg path {
+      fill: #888;
+      transition: fill 0s ease;
+    }
+  }
+`;
+const CntPreview = styled.div`
+  height: 100%;
+  margin: 40px 20px 0 20px;
+  border: 2px solid blue;
+`;
 
 function Section1({ scrollYProgress }: SectionProps) {
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
@@ -155,17 +189,61 @@ function Section1({ scrollYProgress }: SectionProps) {
             </div>
           </CntHeader>
           <CntExplain>
-            국회에서 의결된 법률안은 정부에 이송되어 15일 이내에 대통령이
-            공포한다. 누구든지 체포 또는 구속을 당한 때에는 즉시 변호인의 조력을
-            받을 권리를 가진다. 다만, 형사피고인이 스스로 변호인을 구할 수 없을
-            때에는 법률이 정하는 바에 의하여 국가가 변호인을 붙인다.
+            TMDB API를 사용해서 제작한 영화 차트 순위 웹사이트입니다. <br />
+            최신 영화의 성적을 실시간으로 확인할 수 있으며, 이를 통해 최신 영화
+            트렌드를 파악할 수 있습니다. 인기상영작, 개봉예정작, 현재상영작
+            3가지 카테고리로 나누어 각각의 차트를 한눈에 확인이 가능합니다.
+            <br />
           </CntExplain>
           <CntTechBox>
+            <CntTechUl>
+              <CntTechLi>Timeline</CntTechLi>
+              <CntTechLi>2024</CntTechLi>
+            </CntTechUl>
             <CntTechUl>
               <CntTechLi>Tech</CntTechLi>
               <CntTechLi>React JS, Typescript, Framer-motion</CntTechLi>
             </CntTechUl>
+            <CntTechUl>
+              <CntTechLi>API</CntTechLi>
+              <CntTechLiHover>
+                TMDB API
+                <ArrowSvg
+                  style={{ bottom: "0", right: "-18px" }}
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    style={{ transition: "fill 0s ease" }}
+                    d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"
+                  />
+                </ArrowSvg>
+              </CntTechLiHover>
+            </CntTechUl>
+            <CntTechUl>
+              <CntTechLi style={{ color: "rgb(173, 127, 57)" }}>
+                Source Code
+              </CntTechLi>
+              <CntTechLiHover>
+                Github
+                <ArrowSvg
+                  style={{ bottom: "0", right: "25px" }}
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    style={{ transition: "fill 0s ease" }}
+                    d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"
+                  />
+                </ArrowSvg>
+              </CntTechLiHover>
+            </CntTechUl>
           </CntTechBox>
+          <CntPreview></CntPreview>
         </Cnt>
       </Wrapper>
     </Sec>
