@@ -14,7 +14,7 @@ const Nav = styled(motion.div)`
   justify-content: space-between;
   /* gap: 40vw; */
   color: rgb(150, 150, 150);
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   z-index: 99999;
   /* border: 1px solid black; */
 `;
@@ -186,10 +186,10 @@ const MenuBtn = styled.button<{ show: boolean }>`
   /* font-family: "neue_montreallight"; */
   font-size: 17px;
   cursor: pointer;
-  /* display: ${(props) => (props.show ? "flex" : "none")}; */
-  transform: translateY(${(props) => (props.show ? "0" : "25px")});
+  display: ${(props) => (props.show ? "flex" : "none")};
+  /* transform: translateY(${(props) => (props.show ? "0" : "25px")});
   opacity: ${(props) => (props.show ? 1 : 0)};
-  transition: opacity 0.25s, transform 0.25s;
+  transition: opacity 0.25s, transform 0.25s; */
   &:hover {
     color: #ff5c5c;
     border: 1px solid #ff5c5c;
@@ -293,7 +293,7 @@ function Navigation() {
         <ul style={{ textAlign: "right" }}>
           <LeftLi>
             <a
-              href="https://www.naver.com/"
+              href="https://github.com/jliliflora"
               style={{ cursor: "pointer" }}
               target="_blank"
             >
@@ -357,7 +357,7 @@ function Navigation() {
         <ul style={{ textAlign: "right" }}>
           <LeftLi>
             <a
-              href="https://www.naver.com/"
+              href="https://www.instagram.com/j.liliflora/"
               style={{ cursor: "pointer" }}
               target="_blank"
             >
@@ -374,7 +374,7 @@ function Navigation() {
           </LeftLi>
           <LeftLi>
             <a
-              href="https://www.naver.com/"
+              href="https://jliliflora.github.io/portfolio/"
               style={{ cursor: "pointer" }}
               target="_blank"
             >
