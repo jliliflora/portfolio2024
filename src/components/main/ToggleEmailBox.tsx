@@ -23,6 +23,7 @@ const ToggleSubCnt = styled.div`
   color: #2e2e2e;
   /* padding: 1em; */
   font-size: 1rem;
+  font-family: "neue_montrealregular";
   /* border: 1px solid black; */
 `;
 const WriteButton = styled.button`

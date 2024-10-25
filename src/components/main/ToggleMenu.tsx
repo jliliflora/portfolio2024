@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 
 const ToggleCntBox = styled.div`
@@ -8,9 +9,20 @@ const ToggleCnt = styled.div`
   display: flex;
   justify-content: space-between;
   color: #2e2e2e;
-  /* padding: 1em; */
+  padding: 1rem 0rem;
   font-size: 1rem;
+  font-family: "neue_montrealregular";
   /* border: 1px solid black; */
+`;
+const ToggleEmailCnt = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  color: #2e2e2e;
+  background-color: #eee;
+  border-radius: 22px;
+  font-size: 1rem;
+  font-family: "neue_montrealregular";
 `;
 const WriteButton = styled.button`
   background-color: #202020;
@@ -49,33 +61,64 @@ const CopyButton = styled.button`
 `;
 
 function ToggleMenu() {
+  //copy button
+  const [copied, setCopied] = useState(false);
+
+  const textToCopy = "syon704@gmail.com"; // 복사할 텍스트
+
+  const handleCopy = async (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation(); // 부모 요소로의 이벤트 전파 막기
+    try {
+      await navigator.clipboard.writeText(textToCopy); // 클립보드에 텍스트 복사
+      setCopied(true); // 복사 성공 시 상태 업데이트
+      setTimeout(() => setCopied(false), 2000); // 2초 후 상태 초기화
+    } catch (err) {
+      console.error("Failed to copy text: ", err);
+    }
+  };
+  //navhandler
+  const handleScroll = (sectionId: string) => {
+    const sectionElement = document.getElementById(sectionId);
+    if (sectionElement) {
+      sectionElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div>
       <ToggleCntBox>
-        <ToggleCnt style={{ padding: "0.2rem 0rem 1rem 0.5rem" }}>
-          <span
-            style={{
-              fontSize: "1.3rem",
-              fontFamily: "neue_montrealmedium",
-              padding: "0",
-              marginTop: "7px",
-            }}
-          >
-            Email
-          </span>
-          <WriteButton>Write</WriteButton>
+        <ToggleCnt
+          onClick={() => handleScroll("section1")}
+          style={{ paddingTop: "0.5rem", cursor: "pointer" }}
+        >
+          Movie Rank WebSite
         </ToggleCnt>
+        <ToggleCnt>Coin traker</ToggleCnt>
+        <ToggleCnt>Carrot Market App</ToggleCnt>
         <ToggleCnt
           style={{
-            backgroundColor: "#eeeeee",
-            borderRadius: "22px",
+            borderTop: "0.3px solid #cacaca",
+            padding: "1rem 0 0.3rem 0",
+            color: "rgb(150, 150, 150)",
+            fontSize: "0.9rem",
           }}
         >
-          <span style={{ padding: "0", margin: "8px 0 0 12px" }}>
-            syon704@gmail.com
-          </span>
-          <CopyButton>copy</CopyButton>
+          Email
         </ToggleCnt>
+        <ToggleCnt style={{ padding: "0" }}>
+          <ToggleEmailCnt>
+            <span style={{ padding: "0", margin: "8px 0 0 12px" }}>
+              syon704@gmail.com
+            </span>
+            <CopyButton onClick={handleCopy}>
+              {copied ? "Copied!" : "Copy"}
+            </CopyButton>
+          </ToggleEmailCnt>
+          <WriteButton>Write</WriteButton>
+        </ToggleCnt>
+        <ToggleCnt>Github</ToggleCnt>
+        <ToggleCnt>Instargram</ToggleCnt>
+        <ToggleCnt style={{ paddingBottom: "0" }}>2022 Portfolio</ToggleCnt>
       </ToggleCntBox>
     </div>
   );

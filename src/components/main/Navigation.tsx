@@ -92,7 +92,7 @@ const ToggleSub = styled(motion.div)`
   width: 270px;
   padding: 15px;
   background-color: #ffffff;
-  border-radius: 6px;
+  border-radius: 20px;
   transform-origin: 50% -30px;
   box-shadow: rgba(0, 0, 0, 0.157) 0px 0.602187px 3.32481px -1.08333px,
     rgba(0, 0, 0, 0.145) 0px 2.28853px 5.03477px -2.16667px,
@@ -130,13 +130,14 @@ const MenuBtn = styled.button<{ show: boolean }>`
   perspective: 2000px;
 `;
 const ToggleMenuBox = styled(motion.div)`
+  cursor: default;
   position: absolute;
   top: 60px;
-  left: -180px;
-  width: 270px;
-  padding: 15px;
+  left: -270px;
+  width: 360px;
+  padding: 15px 20px;
   background-color: #ffffff;
-  border-radius: 6px;
+  border-radius: 20px;
   transform-origin: 50% -30px;
   box-shadow: rgba(0, 0, 0, 0.157) 0px 0.602187px 3.32481px -1.08333px,
     rgba(0, 0, 0, 0.145) 0px 2.28853px 5.03477px -2.16667px,
