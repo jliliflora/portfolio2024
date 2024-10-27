@@ -12,7 +12,7 @@ const Sec = styled.section`
   top: 0px;
   height: 150vh;
   // padding-bottom: 100vh; /* 추가 스크롤 공간을 줌 */
-  /* background-color: rgb(117, 107, 33); */
+  background-color: rgb(117, 107, 33);
   /* border-top: 0.3px solid #cacaca; */
 `;
 const Wrapper = styled.div`

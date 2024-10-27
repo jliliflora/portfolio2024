@@ -1,4 +1,5 @@
 import { motion, MotionValue, useTransform } from "framer-motion";
+import { useRef } from "react";
 import styled from "styled-components";
 
 interface SectionProps {
@@ -10,7 +11,7 @@ const Sec = styled.section`
   position: sticky;
   top: 0px;
   height: 150vh;
-  /* background-color: rgb(17, 75, 53); */
+  background-color: rgb(17, 75, 53);
 `;
 const Wrapper = styled.div`
   position: relative;
@@ -21,7 +22,7 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   border-top: 0.3px solid #cacaca;
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
   /* background-color: rgb(17, 212, 137); */
   /* padding-bottom: 10vh; */
 `;
@@ -32,7 +33,7 @@ const Cnt = styled(motion.div)`
   width: 100%;
   height: 100vh;
   border-top: 0.3px solid #cacaca;
-  /* border: 2px solid #9e2222; */
+  border: 2px solid #9e2222;
 `;
 const CntHeader = styled.div`
   display: flex;
@@ -145,15 +146,16 @@ const CntPreview = styled.div`
 
 function Section2({ scrollYProgress }: SectionProps) {
   const scale = useTransform(scrollYProgress, [0, 1], [1.1, 0.9]);
+  const sectionRef = useRef(null);
+
   return (
-    <Sec>
+    <Sec ref={sectionRef} id="section2">
       <Wrapper>
-        {/* <motion.p style={{ scale }}>Scroll Perspective</motion.p> */}
         <Cnt style={{ scale }}>
           <CntHeader>
             <div>
               <CntTitleBox>
-                <CntTitle>React</CntTitle>
+                <CntTitle>SECTION2 React</CntTitle>
                 <CntTitleSvg
                   width="32px"
                   height="32px"

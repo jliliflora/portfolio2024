@@ -80,7 +80,31 @@ function ToggleMenu() {
   const handleScroll = (sectionId: string) => {
     const sectionElement = document.getElementById(sectionId);
     if (sectionElement) {
-      sectionElement.scrollIntoView({ behavior: "smooth" });
+      // 각 섹션의 높이를 상수로 정의
+      const sectionHeight = (150 * window.innerHeight) / 100; // 150vh
+
+      // 섹션의 인덱스에 따라 스크롤 위치 계산
+      let index = 0;
+      switch (sectionId) {
+        case "section1":
+          index = 0;
+          break;
+        case "section2":
+          index = 1;
+          break;
+        case "section3":
+          index = 2;
+          break;
+        default:
+          index = 0;
+      }
+
+      const yOffset = index * sectionHeight + window.innerHeight; // +100vh
+      // console.log(yOffset);
+      window.scrollTo({
+        top: yOffset,
+        behavior: "smooth",
+      });
     }
   };
 
@@ -91,10 +115,10 @@ function ToggleMenu() {
           onClick={() => handleScroll("section1")}
           style={{ paddingTop: "0.5rem", cursor: "pointer" }}
         >
-          Movie Rank WebSite
+          <span style={{}}>sec1</span>
         </ToggleCnt>
-        <ToggleCnt>Coin traker</ToggleCnt>
-        <ToggleCnt>Carrot Market App</ToggleCnt>
+        <ToggleCnt onClick={() => handleScroll("section2")}>sec2</ToggleCnt>
+        <ToggleCnt onClick={() => handleScroll("section3")}>sec3</ToggleCnt>
         <ToggleCnt
           style={{
             borderTop: "0.3px solid #cacaca",

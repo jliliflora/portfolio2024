@@ -1,4 +1,5 @@
 import { motion, MotionValue, useTransform } from "framer-motion";
+import { useRef } from "react";
 import styled from "styled-components";
 
 interface SectionProps {
@@ -23,7 +24,7 @@ const Wrapper = styled.div`
   justify-content: center;
   border-top: 0.3px solid #cacaca;
   box-sizing: border-box; /* padding과 border가 포함된 박스 크기 계산 */
-  background-color: rgb(31, 71, 193);
+  /* background-color: rgb(31, 71, 193); */
   // padding-bottom: 10vh;
 `;
 const Cnt = styled(motion.div)`
@@ -32,14 +33,15 @@ const Cnt = styled(motion.div)`
   left: 0;
   width: 100%; /* 부모의 너비를 모두 차지하도록 변경 */
   height: 100vh;
-  background-color: #fff;
+  /* background-color: #fff; */
 `;
 
 function Section3({ scrollYProgress }: SectionProps) {
   const scale = useTransform(scrollYProgress, [0, 1], [1.2, 1]);
+  const sectionRef = useRef(null);
 
   return (
-    <Sec>
+    <Sec ref={sectionRef} id="section3">
       <Wrapper>
         <Cnt style={{ scale }}>
           <motion.p style={{ scale }}>Scroll Perspective</motion.p>
