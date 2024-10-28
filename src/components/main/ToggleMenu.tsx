@@ -8,11 +8,19 @@ const ToggleCntBox = styled.div`
 const ToggleCnt = styled.div`
   display: flex;
   justify-content: space-between;
+  position: relative;
   color: #2e2e2e;
   padding: 1rem 0rem;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-family: "neue_montrealregular";
+  cursor: pointer;
   /* border: 1px solid black; */
+  &:hover {
+    color: #888;
+    svg path {
+      fill: #888;
+    }
+  }
 `;
 const ToggleEmailCnt = styled.div`
   display: flex;
@@ -23,6 +31,7 @@ const ToggleEmailCnt = styled.div`
   border-radius: 22px;
   font-size: 1rem;
   font-family: "neue_montrealregular";
+  cursor: default;
 `;
 const WriteButton = styled.button`
   background-color: #202020;
@@ -59,13 +68,20 @@ const CopyButton = styled.button`
     color: #ffffff;
   }
 `;
+const ArrowSvg = styled.svg`
+  /* border: 1px solid red; */
+  position: absolute;
+  bottom: 1rem;
+  /* right: 10; */
+  path {
+    fill: #2e2e2e;
+  }
+`;
 
 function ToggleMenu() {
   //copy button
   const [copied, setCopied] = useState(false);
-
   const textToCopy = "syon704@gmail.com"; // 복사할 텍스트
-
   const handleCopy = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation(); // 부모 요소로의 이벤트 전파 막기
     try {
@@ -76,11 +92,11 @@ function ToggleMenu() {
       console.error("Failed to copy text: ", err);
     }
   };
+
   //navhandler
   const handleScroll = (sectionId: string) => {
     const sectionElement = document.getElementById(sectionId);
     if (sectionElement) {
-      // 각 섹션의 높이를 상수로 정의
       const sectionHeight = (150 * window.innerHeight) / 100; // 150vh
 
       // 섹션의 인덱스에 따라 스크롤 위치 계산
@@ -113,12 +129,16 @@ function ToggleMenu() {
       <ToggleCntBox>
         <ToggleCnt
           onClick={() => handleScroll("section1")}
-          style={{ paddingTop: "0.5rem", cursor: "pointer" }}
+          style={{ paddingTop: "0.5rem" }}
         >
-          <span style={{}}>sec1</span>
+          <span style={{ cursor: "pointer" }}>sec1</span>
         </ToggleCnt>
-        <ToggleCnt onClick={() => handleScroll("section2")}>sec2</ToggleCnt>
-        <ToggleCnt onClick={() => handleScroll("section3")}>sec3</ToggleCnt>
+        <ToggleCnt onClick={() => handleScroll("section2")}>
+          <span style={{ cursor: "pointer" }}>sec2</span>
+        </ToggleCnt>
+        <ToggleCnt onClick={() => handleScroll("section3")}>
+          <span style={{ cursor: "pointer" }}>sec3</span>
+        </ToggleCnt>
         <ToggleCnt
           style={{
             borderTop: "0.3px solid #cacaca",
@@ -140,9 +160,46 @@ function ToggleMenu() {
           </ToggleEmailCnt>
           <WriteButton>Write</WriteButton>
         </ToggleCnt>
-        <ToggleCnt>Github</ToggleCnt>
-        <ToggleCnt>Instargram</ToggleCnt>
-        <ToggleCnt style={{ paddingBottom: "0" }}>2022 Portfolio</ToggleCnt>
+        <ToggleCnt>
+          <a href="https://github.com/jliliflora" target="_blank">
+            Github
+            <ArrowSvg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+            >
+              <path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z" />
+            </ArrowSvg>
+          </a>
+        </ToggleCnt>
+        <ToggleCnt>
+          <a href="https://www.instagram.com/j.liliflora/" target="_blank">
+            Instargram
+            <ArrowSvg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+            >
+              <path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z" />
+            </ArrowSvg>
+          </a>
+        </ToggleCnt>
+        <ToggleCnt style={{ paddingBottom: "0" }}>
+          <a href="https://jliliflora.github.io/portfolio/" target="_blank">
+            2022 Portfolio
+            <ArrowSvg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              style={{ bottom: "0" }}
+            >
+              <path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z" />
+            </ArrowSvg>
+          </a>
+        </ToggleCnt>
       </ToggleCntBox>
     </div>
   );

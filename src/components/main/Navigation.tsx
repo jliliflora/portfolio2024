@@ -70,12 +70,12 @@ const StarSvg = styled.svg`
 `;
 
 const navVariants = {
-  start: { opacity: 0, y: -25 },
+  start: { opacity: 0, y: -30 },
   end: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.5,
+      duration: 0.7,
     },
   },
 };
@@ -181,7 +181,7 @@ function Navigation() {
   };
 
   return (
-    <Nav>
+    <Nav variants={navVariants} initial="start" animate="end">
       <Sec show={showButton}>
         <ul>
           <li>FrontEnd Developer</li>
