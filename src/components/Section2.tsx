@@ -145,7 +145,7 @@ const CntPreview = styled.div`
 `;
 
 function Section2({ scrollYProgress }: SectionProps) {
-  const scale = useTransform(scrollYProgress, [0, 1], [1.1, 0.9]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1.05, 0.9]);
   const sectionRef = useRef(null);
 
   return (
@@ -244,21 +244,6 @@ function Section2({ scrollYProgress }: SectionProps) {
             </CntTechUl>
           </CntTechBox>
           <CntPreview></CntPreview>
-          <svg
-            width="40px"
-            height="40px"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M12 2V22M19.0711 4.92893L4.92893 19.0711M22 12H2M19.0711 19.0711L4.92893 4.92893"
-              stroke="#000000"
-              stroke-width="0.7"
-              stroke-linecap="square"
-              stroke-linejoin="bevel"
-            />
-          </svg>
         </Cnt>
       </Wrapper>
     </Sec>

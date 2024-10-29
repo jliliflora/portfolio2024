@@ -10,9 +10,10 @@ const Sec = styled(motion.section)`
   overflow: hidden;
   position: sticky;
   top: 0px;
-  height: 150vh;
-  background-color: rgb(32, 50, 103);
+  height: 100vh;
+  background-color: rgb(184, 44, 90);
 `;
+
 const Wrapper = styled.div`
   position: relative;
   width: 100vw;
@@ -22,7 +23,7 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   border-top: 0.3px solid #cacaca;
-  /* background-color: rgb(31, 71, 193); */
+  /* background-color: rgb(193, 31, 50); */
   // padding-bottom: 10vh;
 `;
 const Cnt = styled(motion.div)`
@@ -35,19 +36,19 @@ const Cnt = styled(motion.div)`
   border: 2px solid #9e2222;
 `;
 
-function Section3({ scrollYProgress }: SectionProps) {
-  const scale = useTransform(scrollYProgress, [0, 1], [1.1, 0.95]);
+function About({ scrollYProgress }: SectionProps) {
+  const scale = useTransform(scrollYProgress, [0, 1], [1.15, 1]);
   const sectionRef = useRef(null);
 
   return (
-    <Sec ref={sectionRef} id="section3">
+    <Sec ref={sectionRef} id="section4">
       <Wrapper>
         <Cnt style={{ scale }}>
-          {/* <motion.p style={{ scale }}>Scroll Perspective</motion.p> */}
+          <motion.p style={{ scale }}>Scroll Perspective</motion.p>
         </Cnt>
       </Wrapper>
     </Sec>
   );
 }
 
-export default Section3;
+export default About;

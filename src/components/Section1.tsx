@@ -35,7 +35,7 @@ const Cnt = styled(motion.div)`
   /*width: 73vw; */
   height: 100vh;
   border-top: 0.3px solid #cacaca;
-  /* border: 2px solid #9e2222; */
+  border: 2px solid #9e2222;
 `;
 const CntHeader = styled.div`
   display: flex;
@@ -148,7 +148,7 @@ const CntPreview = styled.div`
 `;
 
 function Section1({ scrollYProgress }: SectionProps) {
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.85]);
   const sectionRef = useRef(null);
 
   return (

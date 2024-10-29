@@ -5,10 +5,11 @@ import styled from "styled-components";
 import Section1 from "./components/Section1";
 import Section2 from "./components/Section2";
 import Section3 from "./components/Section3";
+import About from "./components/About";
 
 const ExpMain = styled.div`
   position: relative;
-  height: 450vh;
+  height: 600vh;
 `;
 
 function Experience() {
@@ -33,6 +34,7 @@ function Experience() {
       <Section1 scrollYProgress={scrollYProgress} />
       <Section2 scrollYProgress={scrollYProgress} />
       <Section3 scrollYProgress={scrollYProgress} />
+      <About scrollYProgress={scrollYProgress} />
     </ExpMain>
   );
 }
