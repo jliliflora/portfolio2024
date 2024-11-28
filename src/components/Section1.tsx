@@ -213,7 +213,7 @@ function Section1({ scrollYProgress }: SectionProps) {
             </CntTechUl>
             <CntTechUl>
               <CntTechLi>Tech</CntTechLi>
-              <CntTechLi>React JS, Typescript, Framer-motion</CntTechLi>
+              <CntTechLi>React JS, Typescript, Framer-motion, Vercel</CntTechLi>
             </CntTechUl>
             <CntTechUl>
               <CntTechLi>API</CntTechLi>

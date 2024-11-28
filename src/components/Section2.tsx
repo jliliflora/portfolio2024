@@ -171,7 +171,7 @@ function Section2({ scrollYProgress }: SectionProps) {
                     stroke-linejoin="bevel"
                   />
                 </CntTitleSvg>
-                <CntTitle>Movie Rank WebSite</CntTitle>
+                <CntTitle>Crypto Traker WebSite</CntTitle>
               </CntTitleBox>
             </div>
             <div>
@@ -189,11 +189,14 @@ function Section2({ scrollYProgress }: SectionProps) {
             </div>
           </CntHeader>
           <CntExplain>
-            TMDB API를 사용해서 제작한 영화 차트 순위 웹사이트입니다. <br />
-            최신 영화의 성적을 실시간으로 확인할 수 있으며, 이를 통해 최신 영화
-            트렌드를 파악할 수 있습니다. 인기상영작, 개봉예정작, 현재상영작
-            3가지 카테고리로 나누어 각각의 차트를 한눈에 확인이 가능합니다.
-            <br />
+            Crypto Tracker Website는 다양한 암호화폐들의 가격 변화 추이를 추적할
+            수 있는 웹 애플리케이션입니다. <br />
+            이 프로젝트는 CoinPaprika API를 사용하여 다양한 암호화폐의 가격을
+            가져오며, <br />
+            특정 암호화폐의 가격을 1시간 전, 6시간 전, 1일 전, 7일 전 등 다양한
+            시점에서 확인할 수 있습니다. <br />
+            간편하고 직관적인 인터페이스와 차트를 통해 암호화폐 시장의 변동성을
+            쉽게 파악해보세요!
           </CntExplain>
           <CntTechBox>
             <CntTechUl>
@@ -202,12 +205,12 @@ function Section2({ scrollYProgress }: SectionProps) {
             </CntTechUl>
             <CntTechUl>
               <CntTechLi>Tech</CntTechLi>
-              <CntTechLi>React JS, Typescript, Framer-motion</CntTechLi>
+              <CntTechLi>React JS, Typescript, Apexchart, Vercel</CntTechLi>
             </CntTechUl>
             <CntTechUl>
               <CntTechLi>API</CntTechLi>
               <CntTechLiHover>
-                TMDB API
+                Coinpaprika API
                 <ArrowSvg
                   style={{ bottom: "0", right: "-18px" }}
                   xmlns="http://www.w3.org/2000/svg"
