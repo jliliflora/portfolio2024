@@ -11,7 +11,7 @@ const Sec = styled(motion.section)`
   position: sticky;
   top: 0px;
   height: 100vh;
-  background-color: rgb(184, 44, 90);
+  /* background-color: rgb(184, 44, 90); */
 `;
 
 const Wrapper = styled.div`
@@ -23,7 +23,7 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   border-top: 0.3px solid #cacaca;
-  /* background-color: rgb(193, 31, 50); */
+  background-color: #fff;
   // padding-bottom: 10vh;
 `;
 const Cnt = styled(motion.div)`
@@ -44,7 +44,7 @@ function About({ scrollYProgress }: SectionProps) {
     <Sec ref={sectionRef} id="section4">
       <Wrapper>
         <Cnt style={{ scale }}>
-          <motion.p style={{ scale }}>Scroll Perspective</motion.p>
+          {/* <motion.p style={{ scale }}>Scroll Perspective</motion.p> */}
         </Cnt>
       </Wrapper>
     </Sec>

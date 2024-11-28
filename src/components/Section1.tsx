@@ -12,7 +12,7 @@ const Sec = styled.section`
   top: 0px;
   height: 150vh;
   // padding-bottom: 100vh; /* 추가 스크롤 공간을 줌 */
-  background-color: rgb(117, 107, 33);
+  /* background-color: rgb(117, 107, 33); */
   /* border-top: 0.3px solid #cacaca; */
 `;
 const Wrapper = styled.div`
@@ -144,7 +144,7 @@ const CntTechLiHover = styled.li`
 const CntPreview = styled.div`
   height: 100%;
   margin: 40px 20px 0 20px;
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
 `;
 
 function Section1({ scrollYProgress }: SectionProps) {
@@ -156,7 +156,11 @@ function Section1({ scrollYProgress }: SectionProps) {
       <Wrapper>
         <Cnt style={{ scale }}>
           <CntHeader>
-            <div>
+            <a
+              href="https://movieranking.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <CntTitleBox>
                 <CntTitle>React</CntTitle>
                 <CntTitleSvg
@@ -176,8 +180,12 @@ function Section1({ scrollYProgress }: SectionProps) {
                 </CntTitleSvg>
                 <CntTitle>Movie Rank WebSite</CntTitle>
               </CntTitleBox>
-            </div>
-            <div>
+            </a>
+            <a
+              href="https://movieranking.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <WebSiteBtn>
                 WebSite
                 <ArrowSvg
@@ -189,7 +197,7 @@ function Section1({ scrollYProgress }: SectionProps) {
                   <path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z" />
                 </ArrowSvg>
               </WebSiteBtn>
-            </div>
+            </a>
           </CntHeader>
           <CntExplain>
             TMDB API를 사용해서 제작한 영화 차트 순위 웹사이트입니다. <br />
@@ -246,7 +254,25 @@ function Section1({ scrollYProgress }: SectionProps) {
               </CntTechLiHover>
             </CntTechUl>
           </CntTechBox>
-          <CntPreview></CntPreview>
+          <CntPreview>
+            <a
+              href="https://movieranking.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ display: "block" }}
+            >
+              <video
+                src="/videos/movieranking-video.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                style={{ width: "100%" }}
+              >
+                Your browser does not support the video tag.
+              </video>
+            </a>
+          </CntPreview>
         </Cnt>
       </Wrapper>
     </Sec>

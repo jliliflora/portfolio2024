@@ -155,7 +155,7 @@ function Section2({ scrollYProgress }: SectionProps) {
           <CntHeader>
             <div>
               <CntTitleBox>
-                <CntTitle>SECTION2 React</CntTitle>
+                <CntTitle>React</CntTitle>
                 <CntTitleSvg
                   width="32px"
                   height="32px"
