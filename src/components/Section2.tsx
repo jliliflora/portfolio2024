@@ -11,7 +11,7 @@ const Sec = styled.section`
   position: sticky;
   top: 0px;
   height: 150vh;
-  background-color: rgb(17, 75, 53);
+  background-color: #fff;
 `;
 const Wrapper = styled.div`
   position: relative;
@@ -138,10 +138,19 @@ const CntTechLiHover = styled.li`
     }
   }
 `;
-const CntPreview = styled.div`
+const CntPreview = styled.ul`
   height: 100%;
   margin: 40px 20px 0 20px;
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  list-style: none;
+`;
+const CntPreviewLi = styled.li`
+  /* border: 2px solid red; */
+  border-radius: 15px;
+  overflow: hidden;
 `;
 
 function Section2({ scrollYProgress }: SectionProps) {
@@ -153,7 +162,11 @@ function Section2({ scrollYProgress }: SectionProps) {
       <Wrapper>
         <Cnt style={{ scale }}>
           <CntHeader>
-            <div>
+            <a
+              href="https://crypto-tracker-eight-eta.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <CntTitleBox>
                 <CntTitle>React</CntTitle>
                 <CntTitleSvg
@@ -173,8 +186,12 @@ function Section2({ scrollYProgress }: SectionProps) {
                 </CntTitleSvg>
                 <CntTitle>Crypto Traker WebSite</CntTitle>
               </CntTitleBox>
-            </div>
-            <div>
+            </a>
+            <a
+              href="https://crypto-tracker-eight-eta.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <WebSiteBtn>
                 WebSite
                 <ArrowSvg
@@ -186,7 +203,7 @@ function Section2({ scrollYProgress }: SectionProps) {
                   <path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z" />
                 </ArrowSvg>
               </WebSiteBtn>
-            </div>
+            </a>
           </CntHeader>
           <CntExplain>
             Crypto Tracker Website는 다양한 암호화폐들의 가격 변화 추이를 추적할
@@ -246,7 +263,62 @@ function Section2({ scrollYProgress }: SectionProps) {
               </CntTechLiHover>
             </CntTechUl>
           </CntTechBox>
-          <CntPreview></CntPreview>
+          <CntPreview>
+            <CntPreviewLi>
+              <a
+                href="https://crypto-tracker-eight-eta.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <video
+                  src="/videos/cryptotraker-001.mov"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  style={{ width: "100%" }}
+                >
+                  Your browser does not support the video tag.
+                </video>
+              </a>
+            </CntPreviewLi>
+            <CntPreviewLi>
+              <a
+                href="https://crypto-tracker-eight-eta.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <video
+                  src="/videos/cryptotraker-002.mov"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  style={{ width: "100%" }}
+                >
+                  Your browser does not support the video tag.
+                </video>
+              </a>
+            </CntPreviewLi>
+            <CntPreviewLi>
+              <a
+                href="https://crypto-tracker-eight-eta.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <video
+                  src="/videos/cryptotraker-003.mov"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  style={{ width: "100%" }}
+                >
+                  Your browser does not support the video tag.
+                </video>
+              </a>
+            </CntPreviewLi>
+          </CntPreview>
         </Cnt>
       </Wrapper>
     </Sec>

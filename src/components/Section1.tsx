@@ -144,6 +144,8 @@ const CntTechLiHover = styled.li`
 const CntPreview = styled.div`
   height: 100%;
   margin: 40px 20px 0 20px;
+  border-radius: 15px;
+  overflow: hidden;
   /* border: 2px solid blue; */
 `;
 
