@@ -198,11 +198,15 @@ function Section3({ scrollYProgress }: SectionProps) {
             </a>
           </CntHeader>
           <CntExplain>
-            TMDB API를 사용해서 제작한 영화 차트 순위 웹사이트입니다. <br />
-            최신 영화의 성적을 실시간으로 확인할 수 있으며, 이를 통해 최신 영화
-            트렌드를 파악할 수 있습니다. 인기상영작, 개봉예정작, 현재상영작
-            3가지 카테고리로 나누어 각각의 차트를 한눈에 확인이 가능합니다.
+            "당근 마켓" 앱을 클론 코딩한 웹 어플리케이션 프로젝트입니다.
             <br />
+            토큰 기반 인증 시스템과 이메일 발송 기능을 적용하여 회원가입과
+            로그인 기능을 제공하고
+            <br />
+            서버리스 데이터베이스인 Supabase를 연동하여 게시물 작성, 댓글 작성,
+            그리고 좋아요 기능을 구현했습니다. <br />
+            이를 통해 실제 서비스에서와 비슷한 환경을 구성하고, 사용자 간의
+            상호작용이 가능한 커뮤니티 기능을 경험할 수 있습니다.
           </CntExplain>
           <CntTechBox>
             <CntTechUl>
@@ -212,26 +216,12 @@ function Section3({ scrollYProgress }: SectionProps) {
             <CntTechUl>
               <CntTechLi>Front</CntTechLi>
               <CntTechLi>
-                NextJS, Typescript, Tailwind CSS, Nodemailer, Vercel
+                NextJS, React19, Typescript, Tailwind CSS, Nodemailer, Vercel
               </CntTechLi>
             </CntTechUl>
             <CntTechUl>
               <CntTechLi>Back</CntTechLi>
-              <CntTechLiHover>
-                Prisma, Superbase
-                <ArrowSvg
-                  style={{ bottom: "0", right: "-18px" }}
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    style={{ transition: "fill 0s ease" }}
-                    d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"
-                  />
-                </ArrowSvg>
-              </CntTechLiHover>
+              <CntTechLi>Prisma, PlanetScale, Supabase</CntTechLi>
             </CntTechUl>
             <CntTechUl>
               <CntTechLi style={{ color: "rgb(173, 127, 57)" }}>
