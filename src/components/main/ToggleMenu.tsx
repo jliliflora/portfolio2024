@@ -131,13 +131,13 @@ function ToggleMenu() {
           onClick={() => handleScroll("section1")}
           style={{ paddingTop: "0.5rem" }}
         >
-          <span style={{ cursor: "pointer" }}>sec1</span>
+          <span style={{ cursor: "pointer" }}>Movie Rank WebSite</span>
         </ToggleCnt>
         <ToggleCnt onClick={() => handleScroll("section2")}>
-          <span style={{ cursor: "pointer" }}>sec2</span>
+          <span style={{ cursor: "pointer" }}>Crypto Traker WebSite</span>
         </ToggleCnt>
         <ToggleCnt onClick={() => handleScroll("section3")}>
-          <span style={{ cursor: "pointer" }}>sec3</span>
+          <span style={{ cursor: "pointer" }}>Carrot Market App</span>
         </ToggleCnt>
         <ToggleCnt
           style={{

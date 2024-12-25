@@ -105,7 +105,7 @@ function About({ scrollYProgress }: SectionProps) {
   const sectionRef = useRef(null);
 
   return (
-    <Sec ref={sectionRef} id="section4">
+    <Sec ref={sectionRef} id="about">
       <Wrapper>
         <Cnt style={{ scale }}>
           <CntBox>
