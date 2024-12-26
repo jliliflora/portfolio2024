@@ -1,6 +1,12 @@
-import { motion, MotionValue, useTransform } from "framer-motion";
-import { useRef } from "react";
+import {
+  AnimatePresence,
+  motion,
+  MotionValue,
+  useTransform,
+} from "framer-motion";
+import { useRef, useState } from "react";
 import styled from "styled-components";
+import ToggleEmailBox from "./main/ToggleEmailBox";
 
 interface SectionProps {
   scrollYProgress: MotionValue<number>; // scrollYProgress의 타입을 정의
@@ -62,9 +68,9 @@ const CntIntro = styled.p`
 const Svg = styled.svg`
   display: block;
   margin: 0 auto;
-
   width: 85px;
   height: 85px;
+  cursor: pointer;
   transition: transform 0.3s ease; /* 회전 애니메이션 */
   path {
     stroke: rgb(41, 41, 41);
@@ -76,7 +82,6 @@ const Svg = styled.svg`
 
   /* border: 1px solid black; */
 `;
-
 const ImgSec = styled.div<{
   top: string;
   bottom: string;
@@ -99,10 +104,80 @@ const ImgSec = styled.div<{
     transform: rotate(${(props) => props.num2}) scale(1.07); /* 마우스 호버 시 30도 회전 */
   }
 `;
+const Footer = styled.ul`
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  /* width: 500px;
+  height: 50px; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  list-style: none;
+`;
+const FooterItem = styled.li`
+  position: relative;
+  cursor: pointer;
+  &:hover {
+    color: #cacaca;
+  }
+  &:hover svg path {
+    fill: #cacaca;
+  }
+  &:nth-child(3) {
+    pointer-events: none;
+  }
+`;
+const ArrowSvg = styled.svg`
+  position: absolute;
+  bottom: 0;
+  right: 10;
+  path {
+    fill: #000;
+  }
+`;
+
+//toggle
+const ToggleItem = styled(motion.div)`
+  width: auto;
+  perspective: 2000px;
+`;
+const ToggleSub = styled(motion.div)`
+  position: absolute;
+  top: -140px;
+  left: -100px;
+  width: 270px;
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  transform-origin: 50% -30px;
+  box-shadow: rgba(0, 0, 0, 0.157) 0px 0.602187px 3.32481px -1.08333px,
+    rgba(0, 0, 0, 0.145) 0px 2.28853px 5.03477px -2.16667px,
+    rgba(0, 0, 0, 0.086) 0px 10px 22px -3.25px;
+`;
+const toggleAnimate = {
+  enter: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: 25 },
+};
 
 function About({ scrollYProgress }: SectionProps) {
   const scale = useTransform(scrollYProgress, [0, 1], [1.15, 1]);
   const sectionRef = useRef(null);
+
+  //navhandler
+  const handleScroll = (sectionId: string) => {
+    const sectionElement = document.getElementById(sectionId);
+    if (sectionElement) {
+      sectionElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  //emailToggle
+  const [isClicked, setIsClicked] = useState(false);
+  const toggleClickEmail = () => {
+    setIsClicked(!isClicked);
+  };
 
   return (
     <Sec ref={sectionRef} id="about">
@@ -118,6 +193,7 @@ function About({ scrollYProgress }: SectionProps) {
               &amp; playing tennis. Let's talk!
             </CntIntro>
             <Svg
+              onClick={() => handleScroll("main")}
               xmlns="http://www.w3.org/2000/svg"
               width="81"
               height="81"
@@ -167,6 +243,44 @@ function About({ scrollYProgress }: SectionProps) {
           >
             4
           </ImgSec>
+          <Footer>
+            <div>
+              <ToggleItem onClick={toggleClickEmail}>
+                <FooterItem style={{ paddingRight: 0 }}>Email me...</FooterItem>
+                <AnimatePresence>
+                  {isClicked && (
+                    <ToggleSub
+                      initial="exit"
+                      animate="enter"
+                      exit="exit"
+                      variants={toggleAnimate}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <ToggleEmailBox />
+                    </ToggleSub>
+                  )}
+                </AnimatePresence>
+              </ToggleItem>
+            </div>
+            <FooterItem>
+              <a
+                href="https://github.com/jliliflora"
+                style={{ cursor: "pointer" }}
+                target="_blank"
+              >
+                Github
+                <ArrowSvg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z" />
+                </ArrowSvg>
+              </a>
+            </FooterItem>
+            <FooterItem>© 2024</FooterItem>
+          </Footer>
         </Cnt>
       </Wrapper>
     </Sec>

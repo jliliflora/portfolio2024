@@ -5,6 +5,7 @@ import OrbitAni from "./components/main/OrbitAni";
 import MainTitle from "./components/main/MainTitle";
 import Navigation from "./components/main/Navigation";
 import ScrollBtn from "./components/main/ScrollBtn";
+import { useRef } from "react";
 
 const Wrapper = styled(motion.main)`
   height: 100vh;
@@ -17,8 +18,9 @@ const Wrapper = styled(motion.main)`
 `;
 
 function App() {
+  const sectionRef = useRef(null);
   return (
-    <Wrapper>
+    <Wrapper ref={sectionRef} id="main">
       <Navigation />
       <SectionBg />
       <OrbitAni />
