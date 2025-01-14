@@ -50,7 +50,7 @@ const CntBox = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   width: 500px;
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
 `;
 const CntTitle = styled.h3`
   display: flex;
@@ -95,9 +95,9 @@ const ImgSec = styled.div<{
   bottom: ${(props) => props.bottom};
   left: ${(props) => props.left};
   right: ${(props) => props.right};
-  width: 250px;
-  height: 300px;
-  border: 1px black solid;
+  width: 375px;
+  height: 180px;
+  /* border: 1px black solid; */
   transition: transform 0.3s ease; /* 회전 애니메이션 */
   transform: rotate(${(props) => props.num1});
   &:hover {
@@ -204,44 +204,81 @@ function About({ scrollYProgress }: SectionProps) {
             </Svg>
           </CntBox>
           <ImgSec
-            top="17%"
+            top="23%"
             bottom=""
-            left="5%"
-            right=""
-            num1="10deg"
-            num2="5deg"
-          >
-            1
-          </ImgSec>
-          <ImgSec
-            top=""
-            bottom="17%"
-            left="5%"
+            left="-10%"
             right=""
             num1="-10deg"
             num2="-5deg"
           >
-            2
-          </ImgSec>
-          <ImgSec
-            top="17%"
-            bottom=""
-            left=""
-            right="5%"
-            num1="-10deg"
-            num2="-5deg"
-          >
-            3
+            <img
+              src="/img/IMG_1155.JPG"
+              alt="Portrait of SeungYeon"
+              style={{
+                width: "100%", // 부모 요소의 너비에 따라 이미지 크기 조정
+                maxWidth: "375px", // 최대 크기 제한
+                objectFit: "cover", // 비율 유지
+                pointerEvents: "none",
+              }}
+              draggable="false"
+            />
           </ImgSec>
           <ImgSec
             top=""
-            bottom="17%"
-            left=""
-            right="5%"
+            bottom="30%"
+            left="-10%"
+            right=""
             num1="10deg"
             num2="5deg"
           >
-            4
+            <img
+              src="/img/IMG_1155.JPG"
+              alt="Portrait of SeungYeon"
+              style={{
+                width: "375px",
+                objectFit: "cover", // 비율 유지
+                pointerEvents: "none",
+              }}
+              draggable="false"
+            />
+          </ImgSec>
+          <ImgSec
+            top="23%"
+            bottom=""
+            left=""
+            right="-10%"
+            num1="10deg"
+            num2="5deg"
+          >
+            <img
+              src="/img/IMG_3244.JPG"
+              alt="Portrait of SeungYeon"
+              style={{
+                width: "375px",
+                objectFit: "cover", // 비율 유지
+                pointerEvents: "none",
+              }}
+              draggable="false"
+            />
+          </ImgSec>
+          <ImgSec
+            top=""
+            bottom="30%"
+            left=""
+            right="-10%"
+            num1="-10deg"
+            num2="-5deg"
+          >
+            <img
+              src="/img/IMG_3244.JPG"
+              alt="Portrait of SeungYeon"
+              style={{
+                width: "375px",
+                objectFit: "cover", // 비율 유지
+                pointerEvents: "none",
+              }}
+              draggable="false"
+            />
           </ImgSec>
           <Footer>
             <div>
@@ -267,6 +304,7 @@ function About({ scrollYProgress }: SectionProps) {
                 href="https://github.com/jliliflora"
                 style={{ cursor: "pointer" }}
                 target="_blank"
+                rel="noreferrer noopener"
               >
                 Github
                 <ArrowSvg
