@@ -96,8 +96,10 @@ const ImgSec = styled.div<{
   left: ${(props) => props.left};
   right: ${(props) => props.right};
   width: 375px;
-  height: 180px;
-  /* border: 1px black solid; */
+  height: auto;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px red solid;
   transition: transform 0.3s ease; /* 회전 애니메이션 */
   transform: rotate(${(props) => props.num1});
   &:hover {
@@ -217,8 +219,10 @@ function About({ scrollYProgress }: SectionProps) {
               style={{
                 width: "100%", // 부모 요소의 너비에 따라 이미지 크기 조정
                 maxWidth: "375px", // 최대 크기 제한
+                height: "auto",
                 objectFit: "cover", // 비율 유지
                 pointerEvents: "none",
+                display: "block",
               }}
               draggable="false"
             />
@@ -232,7 +236,7 @@ function About({ scrollYProgress }: SectionProps) {
             num2="5deg"
           >
             <img
-              src="/img/IMG_1155.JPG"
+              src="/img/IMG_1603.JPG"
               alt="Portrait of SeungYeon"
               style={{
                 width: "375px",
@@ -270,7 +274,7 @@ function About({ scrollYProgress }: SectionProps) {
             num2="-5deg"
           >
             <img
-              src="/img/IMG_3244.JPG"
+              src="/img/IMG_3243.JPG"
               alt="Portrait of SeungYeon"
               style={{
                 width: "375px",
