@@ -39,7 +39,7 @@ const Cnt = styled(motion.div)`
   width: 100%; /* 부모의 너비를 모두 차지하도록 변경 */
   height: 100vh;
   border-top: 0.3px solid #cacaca;
-  border: 2px solid #9e2222;
+  /* border: 2px solid #9e2222; */
 
   /* 자식 요소가 Cnt를 기준으로 위치 잡도록 설정 */
   position: relative;
@@ -49,7 +49,7 @@ const CntBox = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 500px;
+  width: 550px;
   /* border: 1px solid blue; */
 `;
 const CntTitle = styled.h3`
@@ -58,11 +58,15 @@ const CntTitle = styled.h3`
   justify-content: center;
   font-size: 1.2rem;
   color: #cacaca;
+  font-family: "neue_montreallight";
 `;
 const CntIntro = styled.p`
   margin: 3.5rem 0;
-  font-size: 1.85rem;
+  /* font-size: 1.85rem; */
+  font-size: 1.45rem;
+  font-weight: 900;
   text-align: center;
+  font-family: "S-CoreDream-3Light";
   /* border: 1px solid red; */
 `;
 const Svg = styled.svg`
@@ -97,9 +101,9 @@ const ImgSec = styled.div<{
   right: ${(props) => props.right};
   width: 375px;
   height: auto;
-  border-radius: 12px;
+  border-radius: 20px;
   overflow: hidden;
-  border: 2px red solid;
+  /* border: 2px red solid; */
   transition: transform 0.3s ease; /* 회전 애니메이션 */
   transform: rotate(${(props) => props.num1});
   &:hover {
@@ -188,11 +192,16 @@ function About({ scrollYProgress }: SectionProps) {
           <CntBox>
             <CntTitle>ABOUT ME</CntTitle>
             <CntIntro>
-              ex- 7+ years of experience in product and&nbsp;service design. I
-              worked in both big corporations and small startups, always
-              striving to turn complex things into intuitive and thoughtful
-              ones. In my spare time, I'm into collecting sneakers, watching F1
-              &amp; playing tennis. Let's talk!
+              2년간 프론트엔드 개발자로서 <br />
+              게임 운영툴 개발을 담당하며 경험을 쌓았습니다. <br />
+              React, TypeScript, Next.js, Vue.js를 활용해 <br />
+              효율적인 웹 애플리케이션을 구축할 수 있으며, <br />
+              복잡한 요소를 직관적으로 만들기 위해 <br /> 고민하고 노력합니다.
+              <br />
+              <br />
+              여가 시간에는 ☕️ 커피를 즐기며, <br />
+              🖼️ 미술관이나 🏛️ 전시회를 둘러보는 것을 좋아합니다. <br />
+              함께 이야기 나눠요!
             </CntIntro>
             <Svg
               onClick={() => handleScroll("main")}
@@ -218,7 +227,6 @@ function About({ scrollYProgress }: SectionProps) {
               alt="Portrait of SeungYeon"
               style={{
                 width: "100%", // 부모 요소의 너비에 따라 이미지 크기 조정
-                maxWidth: "375px", // 최대 크기 제한
                 height: "auto",
                 objectFit: "cover", // 비율 유지
                 pointerEvents: "none",
@@ -229,7 +237,7 @@ function About({ scrollYProgress }: SectionProps) {
           </ImgSec>
           <ImgSec
             top=""
-            bottom="30%"
+            bottom="24%"
             left="-10%"
             right=""
             num1="10deg"
@@ -239,9 +247,11 @@ function About({ scrollYProgress }: SectionProps) {
               src="/img/IMG_1603.JPG"
               alt="Portrait of SeungYeon"
               style={{
-                width: "375px",
+                width: "100%", // 부모 요소의 너비에 따라 이미지 크기 조정
+                height: "auto",
                 objectFit: "cover", // 비율 유지
                 pointerEvents: "none",
+                display: "block",
               }}
               draggable="false"
             />
@@ -258,16 +268,18 @@ function About({ scrollYProgress }: SectionProps) {
               src="/img/IMG_3244.JPG"
               alt="Portrait of SeungYeon"
               style={{
-                width: "375px",
+                width: "100%", // 부모 요소의 너비에 따라 이미지 크기 조정
+                height: "auto",
                 objectFit: "cover", // 비율 유지
                 pointerEvents: "none",
+                display: "block",
               }}
               draggable="false"
             />
           </ImgSec>
           <ImgSec
             top=""
-            bottom="30%"
+            bottom="24%"
             left=""
             right="-10%"
             num1="-10deg"
@@ -277,9 +289,11 @@ function About({ scrollYProgress }: SectionProps) {
               src="/img/IMG_3243.JPG"
               alt="Portrait of SeungYeon"
               style={{
-                width: "375px",
+                width: "100%", // 부모 요소의 너비에 따라 이미지 크기 조정
+                height: "auto",
                 objectFit: "cover", // 비율 유지
                 pointerEvents: "none",
+                display: "block",
               }}
               draggable="false"
             />
