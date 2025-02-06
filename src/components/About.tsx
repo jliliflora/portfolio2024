@@ -93,13 +93,14 @@ const ImgSec = styled.div<{
   right: string;
   num1: string;
   num2: string;
+  width: string;
 }>`
   position: absolute;
   top: ${(props) => props.top};
   bottom: ${(props) => props.bottom};
   left: ${(props) => props.left};
   right: ${(props) => props.right};
-  width: 375px;
+  width: ${(props) => props.width};
   height: auto;
   border-radius: 20px;
   overflow: hidden;
@@ -215,12 +216,13 @@ function About({ scrollYProgress }: SectionProps) {
             </Svg>
           </CntBox>
           <ImgSec
-            top="23%"
+            top="24%"
             bottom=""
             left="-10%"
             right=""
             num1="-10deg"
             num2="-5deg"
+            width="400px"
           >
             <img
               src="/img/IMG_1155.JPG"
@@ -237,11 +239,12 @@ function About({ scrollYProgress }: SectionProps) {
           </ImgSec>
           <ImgSec
             top=""
-            bottom="24%"
+            bottom="25%"
             left="-10%"
             right=""
             num1="10deg"
             num2="5deg"
+            width="375px"
           >
             <img
               src="/img/IMG_1603.JPG"
@@ -257,12 +260,13 @@ function About({ scrollYProgress }: SectionProps) {
             />
           </ImgSec>
           <ImgSec
-            top="23%"
+            top="24%"
             bottom=""
             left=""
             right="-10%"
             num1="10deg"
             num2="5deg"
+            width="375px"
           >
             <img
               src="/img/IMG_3244.JPG"
@@ -279,11 +283,12 @@ function About({ scrollYProgress }: SectionProps) {
           </ImgSec>
           <ImgSec
             top=""
-            bottom="24%"
+            bottom="25%"
             left=""
             right="-10%"
             num1="-10deg"
             num2="-5deg"
+            width="400px"
           >
             <img
               src="/img/IMG_3243.JPG"

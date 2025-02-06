@@ -11,7 +11,7 @@ const Sec = styled(motion.section)`
   position: sticky;
   top: 0px;
   height: 150vh;
-  background-color: rgb(110, 65, 168);
+  background-color: #fff;
 `;
 const Wrapper = styled.div`
   position: relative;
@@ -32,7 +32,7 @@ const Cnt = styled(motion.div)`
   width: 100%; /* 부모의 너비를 모두 차지하도록 변경 */
   height: 100vh;
   border-top: 0.3px solid #cacaca;
-  border: 2px solid #9e2222;
+  /* border: 2px solid #9e2222; */
 `;
 const CntHeader = styled.div`
   display: flex;
@@ -137,12 +137,20 @@ const CntTechLiHover = styled.li`
     }
   }
 `;
-const CntPreview = styled.div`
+const CntPreview = styled.ul`
   height: 100%;
   margin: 40px 20px 0 20px;
+  overflow: hidden;
+  /* border: 2px solid blue; */
+  display: grid;
+  grid-template-columns: 3fr 7fr;
+  gap: 20px;
+  list-style: none;
+`;
+const CntPreviewLi = styled.li`
+  border: 1px solid #cccccc;
   border-radius: 15px;
   overflow: hidden;
-  border: 2px solid blue;
 `;
 
 function Section3({ scrollYProgress }: SectionProps) {
@@ -155,7 +163,7 @@ function Section3({ scrollYProgress }: SectionProps) {
         <Cnt style={{ scale }}>
           <CntHeader>
             <a
-              href="https://movieranking.vercel.app"
+              href="https://carrot-market-app.vercel.app/enter"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -180,7 +188,7 @@ function Section3({ scrollYProgress }: SectionProps) {
               </CntTitleBox>
             </a>
             <a
-              href="https://movieranking.vercel.app"
+              href="https://carrot-market-app.vercel.app/enter"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -198,20 +206,21 @@ function Section3({ scrollYProgress }: SectionProps) {
             </a>
           </CntHeader>
           <CntExplain>
-            "당근 마켓" 앱을 클론 코딩한 웹 어플리케이션 프로젝트입니다.
+            "당근 마켓" 앱을 클론 코딩한 풀스택 웹 어플리케이션 프로젝트입니다.
             <br />
             토큰 기반 인증 시스템과 이메일 발송 기능을 적용하여 회원가입과
             로그인 기능을 제공하고
             <br />
-            서버리스 데이터베이스인 Supabase를 연동하여 게시물 작성, 댓글 작성,
-            그리고 좋아요 기능을 구현했습니다. <br />
+            서버리스 데이터베이스인 Supabase를 연동하여 백엔드 로직을 구축하고,
+            게시물 작성, 댓글 작성, 좋아요 기능을 구현했습니다.
+            <br />
             이를 통해 실제 서비스에서와 비슷한 환경을 구성하고, 사용자 간의
             상호작용이 가능한 커뮤니티 기능을 경험할 수 있습니다.
           </CntExplain>
           <CntTechBox>
             <CntTechUl>
               <CntTechLi>Timeline</CntTechLi>
-              <CntTechLi>2024</CntTechLi>
+              <CntTechLi>2024 - 2025</CntTechLi>
             </CntTechUl>
             <CntTechUl>
               <CntTechLi>Front</CntTechLi>
@@ -227,30 +236,67 @@ function Section3({ scrollYProgress }: SectionProps) {
               <CntTechLi style={{ color: "rgb(173, 127, 57)" }}>
                 Source Code
               </CntTechLi>
-              <CntTechLiHover>
-                Github
-                <ArrowSvg
-                  style={{ bottom: "0", right: "25px" }}
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    style={{ transition: "fill 0s ease" }}
-                    d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"
-                  />
-                </ArrowSvg>
-              </CntTechLiHover>
+              <a
+                href="https://github.com/jliliflora/carrot-market-app"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <CntTechLiHover>
+                  Github
+                  <ArrowSvg
+                    style={{ bottom: "0", right: "25px" }}
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      style={{ transition: "fill 0s ease" }}
+                      d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"
+                    />
+                  </ArrowSvg>
+                </CntTechLiHover>
+              </a>
             </CntTechUl>
           </CntTechBox>
           <CntPreview>
-            <a
-              href="https://movieranking.vercel.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ display: "block" }}
-            ></a>
+            <CntPreviewLi>
+              <a
+                href="https://carrot-market-app.vercel.app/enter"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <video
+                  src="/videos/carrot-001.mov"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  style={{ width: "100%" }}
+                >
+                  Your browser does not support the video tag.
+                </video>
+              </a>
+            </CntPreviewLi>
+            <CntPreviewLi>
+              <a
+                href="https://carrot-market-app.vercel.app/enter"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <video
+                  src="/videos/carrot-002.mov"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  style={{ width: "100%" }}
+                >
+                  Your browser does not support the video tag.
+                </video>
+              </a>
+            </CntPreviewLi>
+            <CntPreviewLi>3</CntPreviewLi>
           </CntPreview>
         </Cnt>
       </Wrapper>

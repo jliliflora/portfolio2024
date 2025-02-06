@@ -1,18 +1,7 @@
-import { motion } from "framer-motion";
 import { useState } from "react";
 import styled from "styled-components";
 
 //dropbox
-const SubMenuBackground = styled.div`
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  transform-origin: 0 0;
-  /* box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04); */
-`;
 const ToggleSubBox = styled.div`
   margin-bottom: 5px;
   text-align: left;
@@ -92,7 +81,9 @@ function ToggleEmailBox() {
           >
             Email
           </span>
-          <WriteButton>Write</WriteButton>
+          <WriteButton>
+            <a href="mailto:syon704@gmail.com">Write</a>
+          </WriteButton>
         </ToggleSubCnt>
         <ToggleSubCnt
           style={{

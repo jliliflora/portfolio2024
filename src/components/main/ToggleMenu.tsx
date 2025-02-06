@@ -158,7 +158,9 @@ function ToggleMenu() {
               {copied ? "Copied!" : "Copy"}
             </CopyButton>
           </ToggleEmailCnt>
-          <WriteButton>Write</WriteButton>
+          <WriteButton>
+            <a href="mailto:syon704@gmail.com">Write</a>
+          </WriteButton>
         </ToggleCnt>
         <ToggleCnt>
           <a href="https://github.com/jliliflora" target="_blank">

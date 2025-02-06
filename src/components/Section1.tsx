@@ -35,7 +35,7 @@ const Cnt = styled(motion.div)`
   /*width: 73vw; */
   height: 100vh;
   border-top: 0.3px solid #cacaca;
-  border: 2px solid #9e2222;
+  /* border: 2px solid #9e2222; */
 `;
 const CntHeader = styled.div`
   display: flex;
@@ -219,41 +219,53 @@ function Section1({ scrollYProgress }: SectionProps) {
             </CntTechUl>
             <CntTechUl>
               <CntTechLi>API</CntTechLi>
-              <CntTechLiHover>
-                TMDB API
-                <ArrowSvg
-                  style={{ bottom: "0", right: "-18px" }}
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    style={{ transition: "fill 0s ease" }}
-                    d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"
-                  />
-                </ArrowSvg>
-              </CntTechLiHover>
+              <a
+                href="https://developer.themoviedb.org/reference/intro/getting-started"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <CntTechLiHover>
+                  TMDB API
+                  <ArrowSvg
+                    style={{ bottom: "0", right: "-18px" }}
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      style={{ transition: "fill 0s ease" }}
+                      d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"
+                    />
+                  </ArrowSvg>
+                </CntTechLiHover>
+              </a>
             </CntTechUl>
             <CntTechUl>
               <CntTechLi style={{ color: "rgb(173, 127, 57)" }}>
                 Source Code
               </CntTechLi>
-              <CntTechLiHover>
-                Github
-                <ArrowSvg
-                  style={{ bottom: "0", right: "25px" }}
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    style={{ transition: "fill 0s ease" }}
-                    d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"
-                  />
-                </ArrowSvg>
-              </CntTechLiHover>
+              <a
+                href="https://github.com/jliliflora/react-movieranking"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <CntTechLiHover>
+                  Github
+                  <ArrowSvg
+                    style={{ bottom: "0", right: "25px" }}
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      style={{ transition: "fill 0s ease" }}
+                      d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"
+                    />
+                  </ArrowSvg>
+                </CntTechLiHover>
+              </a>
             </CntTechUl>
           </CntTechBox>
           <CntPreview>

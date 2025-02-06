@@ -33,7 +33,7 @@ const Cnt = styled(motion.div)`
   width: 100%;
   height: 100vh;
   border-top: 0.3px solid #cacaca;
-  border: 2px solid #9e2222;
+  /* border: 2px solid #9e2222; */
 `;
 const CntHeader = styled.div`
   display: flex;
@@ -226,41 +226,53 @@ function Section2({ scrollYProgress }: SectionProps) {
             </CntTechUl>
             <CntTechUl>
               <CntTechLi>API</CntTechLi>
-              <CntTechLiHover>
-                Coinpaprika API
-                <ArrowSvg
-                  style={{ bottom: "0", right: "-18px" }}
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    style={{ transition: "fill 0s ease" }}
-                    d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"
-                  />
-                </ArrowSvg>
-              </CntTechLiHover>
+              <a
+                href="https://api.coinpaprika.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <CntTechLiHover>
+                  Coinpaprika API
+                  <ArrowSvg
+                    style={{ bottom: "0", right: "-18px" }}
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      style={{ transition: "fill 0s ease" }}
+                      d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"
+                    />
+                  </ArrowSvg>
+                </CntTechLiHover>
+              </a>
             </CntTechUl>
             <CntTechUl>
               <CntTechLi style={{ color: "rgb(173, 127, 57)" }}>
                 Source Code
               </CntTechLi>
-              <CntTechLiHover>
-                Github
-                <ArrowSvg
-                  style={{ bottom: "0", right: "25px" }}
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    style={{ transition: "fill 0s ease" }}
-                    d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"
-                  />
-                </ArrowSvg>
-              </CntTechLiHover>
+              <a
+                href="https://github.com/jliliflora/react-crypto-tracker"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <CntTechLiHover>
+                  Github
+                  <ArrowSvg
+                    style={{ bottom: "0", right: "25px" }}
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      style={{ transition: "fill 0s ease" }}
+                      d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"
+                    />
+                  </ArrowSvg>
+                </CntTechLiHover>
+              </a>
             </CntTechUl>
           </CntTechBox>
           <CntPreview>
