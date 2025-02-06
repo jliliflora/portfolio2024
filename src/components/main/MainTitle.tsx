@@ -14,10 +14,6 @@ const TitleBox = styled(motion.div)`
   // border: 1px solid black;
 `;
 
-const TitleHey = styled(motion.div)`
-  color: rgba(20, 20, 26, 0.362);
-`;
-
 const wordAnimation = {
   hidden: {},
   visible: {},

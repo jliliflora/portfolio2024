@@ -1,4 +1,4 @@
-import { delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 const ScrollBox = styled(motion.div)`
