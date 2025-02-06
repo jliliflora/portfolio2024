@@ -63,7 +63,7 @@ const CntTitle = styled.h3`
 const CntIntro = styled.p`
   margin: 3.5rem 0;
   /* font-size: 1.85rem; */
-  font-size: 1.45rem;
+  font-size: 1.35rem;
   font-weight: 900;
   text-align: center;
   font-family: "S-CoreDream-3Light";
@@ -222,7 +222,7 @@ function About({ scrollYProgress }: SectionProps) {
             right=""
             num1="-10deg"
             num2="-5deg"
-            width="400px"
+            width="375px"
           >
             <img
               src="/img/IMG_1155.JPG"
@@ -244,7 +244,7 @@ function About({ scrollYProgress }: SectionProps) {
             right=""
             num1="10deg"
             num2="5deg"
-            width="375px"
+            width="355px"
           >
             <img
               src="/img/IMG_1603.JPG"
@@ -266,7 +266,7 @@ function About({ scrollYProgress }: SectionProps) {
             right="-10%"
             num1="10deg"
             num2="5deg"
-            width="375px"
+            width="355px"
           >
             <img
               src="/img/IMG_3244.JPG"
@@ -288,7 +288,7 @@ function About({ scrollYProgress }: SectionProps) {
             right="-10%"
             num1="-10deg"
             num2="-5deg"
-            width="400px"
+            width="375px"
           >
             <img
               src="/img/IMG_3243.JPG"
@@ -340,7 +340,7 @@ function About({ scrollYProgress }: SectionProps) {
                 </ArrowSvg>
               </a>
             </FooterItem>
-            <FooterItem>© 2024</FooterItem>
+            <FooterItem>© 2025</FooterItem>
           </Footer>
         </Cnt>
       </Wrapper>
