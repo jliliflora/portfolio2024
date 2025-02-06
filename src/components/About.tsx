@@ -216,13 +216,13 @@ function About({ scrollYProgress }: SectionProps) {
             </Svg>
           </CntBox>
           <ImgSec
-            top="24%"
+            top="23%"
             bottom=""
             left="-10%"
             right=""
             num1="-10deg"
             num2="-5deg"
-            width="375px"
+            width="30%"
           >
             <img
               src="/img/IMG_1155.JPG"
@@ -239,12 +239,12 @@ function About({ scrollYProgress }: SectionProps) {
           </ImgSec>
           <ImgSec
             top=""
-            bottom="25%"
+            bottom="24%"
             left="-10%"
             right=""
             num1="10deg"
             num2="5deg"
-            width="355px"
+            width="28.5%"
           >
             <img
               src="/img/IMG_1603.JPG"
@@ -260,13 +260,13 @@ function About({ scrollYProgress }: SectionProps) {
             />
           </ImgSec>
           <ImgSec
-            top="24%"
+            top="23%"
             bottom=""
             left=""
             right="-10%"
             num1="10deg"
             num2="5deg"
-            width="355px"
+            width="28.5%"
           >
             <img
               src="/img/IMG_3244.JPG"
@@ -283,12 +283,12 @@ function About({ scrollYProgress }: SectionProps) {
           </ImgSec>
           <ImgSec
             top=""
-            bottom="25%"
+            bottom="24%"
             left=""
             right="-10%"
             num1="-10deg"
             num2="-5deg"
-            width="375px"
+            width="30%"
           >
             <img
               src="/img/IMG_3243.JPG"
